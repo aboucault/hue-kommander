@@ -6,7 +6,9 @@
         .controller('BaseLayoutController', BaseLayoutController);
 
     /* @ngInject */
-    function BaseLayoutController() {
+    function BaseLayoutController(navigationMenuService) {
+        var baseLayoutCtrl = this;
 
+        baseLayoutCtrl.navigationMenuService = navigationMenuService;
     }
 })();

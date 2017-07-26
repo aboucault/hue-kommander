@@ -7,13 +7,20 @@
         .run(RunFn);
 
     /* @ngInject */
-    function ConfigureApp ( $httpProvider, $mdDateLocaleProvider, $mdThemingProvider, $translateProvider, $urlRouterProvider, $compileProvider/*,
-    $translatePartialLoaderProvider*/ ) {
+    function ConfigureApp ( $httpProvider, $mdDateLocaleProvider, $mdThemingProvider, $translateProvider, $urlRouterProvider, $compileProvider,
+    $translatePartialLoaderProvider, navigationMenuServiceProvider ) {
         // Default routing
         $urlRouterProvider.otherwise('/dashboard');
 
         // Interceptors
         $httpProvider.interceptors.push('processingRequestsHttpInterceptor');
+
+        // Menu
+        navigationMenuServiceProvider.setMenuItems([{
+            state: 'dashboard',
+            mdIconName: '',
+            label: 'dashboard.menu'
+        }]);
 
         // Transalation
         $translateProvider.useSanitizeValueStrategy('sanitize');
@@ -23,7 +30,7 @@
         // Optimization TODO set to false when going to PROD
         $compileProvider.debugInfoEnabled(true);
 
-        // $translatePartialLoaderProvider.addPart('angular/app.translations');
+        $translatePartialLoaderProvider.addPart('angular/app.translations');
 
         // $mdDateLocaleProvider.formatDate = (date) => date ? moment(date).format('DD.MM.YYYY') : '';
         //

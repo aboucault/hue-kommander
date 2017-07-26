@@ -1,0 +1,21 @@
+<aside class="app-template-menu app-menu">
+    <div class="menu-content">
+        <div class="menu-container">
+            <div class="menu-item"
+                 ng-class="{'active': menu.selectedMenuItem.label === menuItem.label}"
+                 ng-repeat="menuItem in menu.menuItems">
+
+                <a href ng-click="menu.clickOnMenuItem(menuItem)"
+                   ng-style="{'color': $mdColors.getThemeColor('primary')}">
+                    <!-- <md-icon class="menu-item-icon material-icons"
+                             md-svg-icon="{{menuItem.mdIconName}}"></md-icon> -->
+                    <md-tooltip ng-if="!menu.isVisible" md-direction="right">{{menuItemLabel | translate}}</md-tooltip>
+
+                    <span class="menu-item-label"
+                          ng-if="menu.isVisible && !menuItem.template">{{menuItem.label | translate }}</span>
+                    <span ng-if="menu.isVisible && menuItem.template" compile="menuItem.template"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+</aside>

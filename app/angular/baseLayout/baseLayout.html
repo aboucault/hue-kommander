@@ -1,6 +1,24 @@
-<div class="base-layout">
+<div class="base-layout" ng-class="{'app-menu-closed': (menu && !menu.isVisible)}">
     Base Layout
-    <div ui-view
-         class="page-content"
-         layout="column"></div>
+    <div class="app-menu-header">
+        <div>
+            <!-- <md-icon class="material-icons close-menu-icon"
+                     md-colors="::{color: 'grey-500'}"
+                     md-svg-icon="{{!menu.isVisible ? 'navigation:ic_menu' : 'navigation:ic_chevron_left'}}"
+                     ng-click="menu.toggleVisibility();"></md-icon> -->
+        </div>
+    </div>
+
+    <div class="flex-wrapper">
+        <hk-navigation-menu></hk-navigation-menu>
+        <div class="app-container">
+            <div ui-view="app-bar">
+                <hk-app-bar></hk-app-bar>
+            </div>
+            <div ui-view
+                 class="page-content"
+                 layout="column">
+            </div>
+        </div>
+    </div>
 </div>
