@@ -3,7 +3,7 @@
 
     angular
         .module('app.components', [
-            'app.components.hk.app.bar',
-            'app.components.hk.navigation.menu'
+            'hk.app.bar',
+            'hk.navigation.menu'
         ]);
 })();

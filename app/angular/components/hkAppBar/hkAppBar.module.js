@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.components.hk.app.bar', [
+        .module('hk.app.bar', [
             'ui.router'
         ]);
 })();

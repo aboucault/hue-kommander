@@ -1,0 +1,28 @@
+.lights {
+    padding: 20px;
+    .lights-list {
+        height: 72px;
+        cursor: pointer;
+
+        .light-icon {
+            border-radius: 50%;
+            padding: 8px 14px;
+            background-color: #26a6ee;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .item-label {
+            margin-bottom: 6px;
+            font-size: 16px;
+        }
+        .item-state {
+            font-size: 14px;
+            color: rgba(#fff, 0.54);
+        }
+        &:hover > * {
+            text-shadow: 0 0 24px rgba(#fff,0.54), 0 0 16px rgba(#fff,0.26);
+            transform: translateY(-8px);
+            transition: all ease 0.5s;
+        }
+    }
+}

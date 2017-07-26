@@ -2,6 +2,8 @@ body {
     background-color: #29283c;
     font-size: $font-size-base;
     line-height: $line-height-base;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
 
     & > [ui-view] {
         height: 100%;

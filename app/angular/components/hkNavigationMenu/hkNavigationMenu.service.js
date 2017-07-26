@@ -84,6 +84,6 @@
     }
 
     angular
-        .module('app.components.hk.navigation.menu')
+        .module('hk.navigation.menu')
         .provider('navigationMenuService', NavigationMenuProvider);
 })();

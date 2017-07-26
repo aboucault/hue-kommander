@@ -2,7 +2,7 @@
     'use strict';
 
     angular
-        .module('app.components.hk.navigation.menu')
+        .module('hk.navigation.menu')
         .controller('hkNavigationMenu', NavigationMenu);
 
     /* @ngInject */

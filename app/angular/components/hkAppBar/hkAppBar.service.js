@@ -22,6 +22,6 @@
     HkAppBar.$inject = ['$rootScope', '$state'];
 
     angular
-        .module('app.components.hk.app.bar')
+        .module('hk.app.bar')
         .service('hkAppBarService', HkAppBar);
 })();

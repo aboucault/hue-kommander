@@ -2,5 +2,8 @@
     'use strict';
 
     angular
-        .module('app.baseLayout', []);    
+        .module('app.baseLayout', [
+            'app.dependencies',
+            'app.components'
+        ]);
 })();

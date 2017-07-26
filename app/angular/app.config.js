@@ -10,16 +10,17 @@
     function ConfigureApp ( $httpProvider, $mdDateLocaleProvider, $mdThemingProvider, $translateProvider, $urlRouterProvider, $compileProvider,
     $translatePartialLoaderProvider, navigationMenuServiceProvider ) {
         // Default routing
-        $urlRouterProvider.otherwise('/dashboard');
+        $urlRouterProvider.otherwise('/lights');
 
         // Interceptors
         $httpProvider.interceptors.push('processingRequestsHttpInterceptor');
 
+
         // Menu
         navigationMenuServiceProvider.setMenuItems([{
-            state: 'dashboard',
+            state: 'lights',
             mdIconName: '',
-            label: 'dashboard.menu'
+            label: 'lights.menu'
         }]);
 
         // Transalation
