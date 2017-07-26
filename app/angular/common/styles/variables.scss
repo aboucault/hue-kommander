@@ -1,0 +1,13 @@
+$imagePath: '../images' !default; // default image path
+
+// ---- COLOR(s) ----
+$grey400: #BDBDBD;
+
+// ---- LAYOUT VAR(s) ----
+$mobileWidth: max-width 768px;
+$desktop: 768px;
+$pratio: 2;
+$spriteFolder: $imagePath+'/sprite/';
+
+$font-size-base: 14px;
+$line-height-base: 1.428571429 // 20/14
