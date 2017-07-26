@@ -15,7 +15,6 @@
         // Interceptors
         $httpProvider.interceptors.push('processingRequestsHttpInterceptor');
 
-
         // Menu
         navigationMenuServiceProvider.setMenuItems([{
             state: 'lights',
