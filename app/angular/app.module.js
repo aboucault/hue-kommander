@@ -7,10 +7,10 @@
         'ngMessages',
         'ngSanitize',
         'ngResource',
-        'angular.filter',
         'ui.router',
         'angular-storage',
-        'ngMaterial'
+        'ngMaterial',
+        'pascalprecht.translate'
     ]);
 
     // Core

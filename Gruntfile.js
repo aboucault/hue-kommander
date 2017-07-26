@@ -30,7 +30,8 @@ module.exports = function (grunt) {
         version: packageJson.version,
         paths: {
             app: bowerJson.appPath || 'app',
-            dist: 'dist'
+            dist: 'dist',
+            tmp: '.tmp'
         }
         // proxies: [{ TODO
         //     context: '/HueKommanderWeb',
@@ -63,7 +64,7 @@ module.exports = function (grunt) {
             'autoprefixer:app',
             'connect:livereload',
             'configureProxies',
-            'testRunner',
+            // 'testRunner',
             'concurrent:watch'
         ]);
     });
@@ -84,7 +85,7 @@ module.exports = function (grunt) {
             'autoprefixer:app',
             'connect:livereload',
             'configureProxies',
-            'testRunner',
+            // 'testRunner',
             'concurrent:watchES6'
         ]);
     });

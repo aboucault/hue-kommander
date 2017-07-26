@@ -53,8 +53,21 @@
     <!-- endbower -->
     <!-- endbuild -->
 
-    <!-- build:js({.tmp,app}) scripts/scripts.js -->
+    <!-- build:js(.tmp/app) scripts/scripts.js -->
     <!-- injectorjs -->
+    <script src="angular/app.module.js"></script>
+    <script src="angular/app.boot.js"></script>
+    <script src="angular/app.config.js"></script>
+    <script src="angular/app.templates.js"></script>
+    <script src="angular/baseLayout/baseLayout.module.js"></script>
+    <script src="angular/baseLayout/baseLayout.route.js"></script>
+    <script src="angular/baseLayout/baseLayout.controller.js"></script>
+    <script src="angular/common/common.module.js"></script>
+    <script src="angular/common/services/processingRequests.interceptor.js"></script>
+    <script src="angular/pages/pages.module.js"></script>
+    <script src="angular/pages/dashboard/dashboard.module.js"></script>
+    <script src="angular/pages/dashboard/dashboard.route.js"></script>
+    <script src="angular/pages/dashboard/dashboard.controller.js"></script>
     <!-- endinjector -->
     <!-- endbuild -->
 </body>

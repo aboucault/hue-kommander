@@ -7,36 +7,40 @@
         .run(RunFn);
 
     /* @ngInject */
-    function ConfigureApp ( $qProvider, $mdDateLocaleProvider, $mdThemingProvider, $translateProvider, $urlRouterProvider, $compileProvider,
-    $translatePartialLoaderProvider ) {
+    function ConfigureApp ( $httpProvider, $mdDateLocaleProvider, $mdThemingProvider, $translateProvider, $urlRouterProvider, $compileProvider/*,
+    $translatePartialLoaderProvider*/ ) {
         // Default routing
         $urlRouterProvider.otherwise('/dashboard');
 
-        $qProvider.errorOnUnhandledRejections(false);
+        // Interceptors
+        $httpProvider.interceptors.push('processingRequestsHttpInterceptor');
 
+        // Transalation
+        $translateProvider.useSanitizeValueStrategy('sanitize');
         $translateProvider.preferredLanguage('en-US');
+        $translateProvider.useLoader('$translatePartialLoader', {urlTemplate: '{part}.{lang}.json'});
 
         // Optimization TODO set to false when going to PROD
         $compileProvider.debugInfoEnabled(true);
 
-        $translatePartialLoaderProvider.addPart('angular/app/translations');
+        // $translatePartialLoaderProvider.addPart('angular/app.translations');
 
-        $mdDateLocaleProvider.formatDate = (date) => date ? moment(date).format('DD.MM.YYYY') : '';
-
-        $mdDateLocaleProvider.parseDate = (dateStr) => {
-            moment(dateStr, ['DD.MM.YYYY', 'DD/MM/YYYY']).toDate();
-        };
+        // $mdDateLocaleProvider.formatDate = (date) => date ? moment(date).format('DD.MM.YYYY') : '';
+        //
+        // $mdDateLocaleProvider.parseDate = (dateStr) => {
+        //     moment(dateStr, ['DD.MM.YYYY', 'DD/MM/YYYY']).toDate();
+        // };
 
         setAngularMaterialPalette($mdThemingProvider);
 
         $mdThemingProvider.theme('default')
-                          .primaryPakette('paletteTest')
+                          .primaryPalette('paletteTest')
                           .accentPalette('paletteTest');
     }
 
     // run
-    function RunFn( $rootScope, $state, $translate, SUPPORTED_LANGUAGE ) {
-        $translate.use(SUPPORTED_LANGUAGE);
+    function RunFn( $rootScope, $state, $translate/*, SUPPORTED_LANGUAGE*/ ) {
+        // $translate.use(SUPPORTED_LANGUAGE);
 
         $rootScope.$on('$stateChangeStart', function (evt, to, params) {
             // add redirectTo feature to ui-rooter

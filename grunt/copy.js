@@ -18,7 +18,7 @@ module.exports = function(grunt, options) {
                 vendor: {
                     expand: true,
                     cwd: '<% paths.app %>',
-                    dest: '.tmp/app',
+                    dest: '<% paths.tmp %>/app',
                     src: ['vendor/**/*']
                 },
 

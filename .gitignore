@@ -1,5 +1,49 @@
-/node_modules
-/dist
-/.tmp
-/.sass-cache
-/bower_components
+### App generated files ###
+app/angular/app.templates.js
+
+### Temporary ###
+.grunt
+.tmp
+.sass-cache
+
+### Bower ###
+app/bower_components/
+app/bower_components/*
+app/_bower_components/
+app/_bower_components/*
+bower_components
+bower_components/
+_bower_components
+
+### Node ###
+node_modules
+_node_modules
+
+### Dist ###
+dist
+
+### OS generated files ###
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.idea
+
+### Log ###
+*.log
+
+### Folders starting with underscore ###
+_*/
+deploy
+deploy/
+
+### Misc ###
+/coverage
+
+### End to end testing
+/e2e/reports
+/e2e/test-runner
+/e2e/launch.bat

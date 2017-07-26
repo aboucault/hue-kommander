@@ -8,10 +8,11 @@ module.exports = function(grunt, options) {
                     files: [{
                         dest: '<%= paths.dist %>/app/<%= app.name %>.js',
                         src: [
-                            '.tmp/app/angular/**/*.module.js',
-                            '.tmp/app/angular/app.templates.js',
-                            '.tmp/app/angular/**/*.js',
-                            '.tmp/app/angular/**/*.spec.js'
+                            '<%= paths.tmp %>/app/angular/app.js',
+                            '<%= paths.tmp %>/app/angular/app.templates.js',
+                            '<%= paths.tmp %>/app/angular/**/*.module.js',
+                            '<%= paths.tmp %>/app/angular/**/*.js',
+                            '<%= paths.tmp %>/app/angular/**/*.spec.js'
                         ]
                     }]
                 }

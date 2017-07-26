@@ -2,5 +2,5 @@
     'use strict';
 
     angular
-        .module('app.common', []);    
+        .module('app.baseLayout', []);    
 })();

@@ -22,7 +22,7 @@ module.exports = function(grunt, options) {
                             'angular/**/*.js',
                             '!angular/app.templates.js'
                         ],
-                        dest: '.tmp/app'
+                        dest: '<%= paths.tmp %>/app'
                     }]
                 },
                 test: {
@@ -34,7 +34,7 @@ module.exports = function(grunt, options) {
                         expand: true,
                         cwd: '<%= paths.app %>',
                         src: ['angular/**/*.js'],
-                        dest: '.tmp/app'
+                        dest: '<%= paths.tmp %>/app'
                     }]
                 }
             }
