@@ -12,12 +12,15 @@
     <!-- endbuild -->
 
     <!-- build:css(.tmp) styles/main.css -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="app.css">
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.min.css" type="text/css">
     <!-- endbuild -->
 </head>
 
 <body>
-    <div ui-view>test</div>
+    <div ui-view></div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <!-- <script>
@@ -64,10 +67,21 @@
     <script src="angular/baseLayout/baseLayout.controller.js"></script>
     <script src="angular/common/common.module.js"></script>
     <script src="angular/common/services/processingRequests.interceptor.js"></script>
+    <script src="angular/components/components.module.js"></script>
+    <script src="angular/components/hkAppBar/hkAppBar.module.js"></script>
+    <script src="angular/components/hkAppBar/hkAppBar.directive.js"></script>
+    <script src="angular/components/hkAppBar/hkAppBar.service.js"></script>
+    <script src="angular/components/hkLightDetails/hkLightDetails.component.js"></script>
+    <script src="angular/components/hkNavigationMenu/hkNavigationMenu.module.js"></script>
+    <script src="angular/components/hkNavigationMenu/hkNavigationMenu.directive.js"></script>
+    <script src="angular/components/hkNavigationMenu/hkNavigationMenu.service.js"></script>
     <script src="angular/pages/pages.module.js"></script>
-    <script src="angular/pages/dashboard/dashboard.module.js"></script>
-    <script src="angular/pages/dashboard/dashboard.route.js"></script>
-    <script src="angular/pages/dashboard/dashboard.controller.js"></script>
+    <script src="angular/pages/lights/lights.module.js"></script>
+    <script src="angular/pages/lights/lights.route.js"></script>
+    <script src="angular/pages/lights/lights.controller.js"></script>
+    <script src="angular/pages/lights/lights.service.js"></script>
+    <script src="angular/vo/light.js"></script>
+    <script src="angular/vo/vo.module.js"></script>
     <!-- endinjector -->
     <!-- endbuild -->
 </body>

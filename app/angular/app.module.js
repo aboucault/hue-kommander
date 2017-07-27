@@ -18,8 +18,8 @@
         'app.dependencies',
         'app.templates',
         'app.common',
-        // 'app.components',
-        // 'app.vo',
+        'app.components',
+        'app.vo',
         'app.baseLayout',
         'app.pages'
     ]);

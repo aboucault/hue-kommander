@@ -1,0 +1,60 @@
+.app-template-menu {
+    padding-top: 63px; // 63px +1 of menu-content border = 64px
+    background-color: rgba(#fff,0.1);
+    color: rgba(#fff, 0.87);
+
+    @include transition(all .3s);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-bottom: 15px;
+
+    &.app-menu {
+        max-width: 256px;
+        transition: max-width 0.3s;
+
+        .menu-item-label {
+            white-space: nowrap;
+        }
+    }
+
+    .menu-content {
+        .menu-container {
+            padding-top: 8px;
+
+            .menu-item {
+                height: 48px;
+                display: flex;
+                align-items: center;
+
+                &.active {
+                    .menu-item-icon, .menu-item-label {
+                        color: inherit;
+                    }
+                }
+
+                a {
+                    text-decoration: none;
+                    display: flex;
+                    align-items: center;
+                    cursor: pointer;
+
+                    .menu-item-icon {
+                        display: inline-block;
+                        text-align: center;
+                        vertical-align: sub;
+                        font-size: 20px;
+                        color: rgba(255,255,255, 0.54);
+                        margin-left: 24px;
+                    }
+
+                    .menu-item-label {
+                        font-size: 14px;
+                        font-weight: 600;
+                        color: rgba(0,0,0,0.87);
+                        padding-left: 30px;
+                    }
+                }
+            }
+        }
+    }
+}
