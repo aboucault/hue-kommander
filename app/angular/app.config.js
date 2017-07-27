@@ -1,10 +1,12 @@
 (function () {
     'use strict';
+
     angular
         .module('app')
         .config(ConfigureApp)
         .constant('SUPPORTED_LANGUAGE', ['fr-FR', 'en-US'])
         .run(RunFn);
+
 
     /* @ngInject */
     function ConfigureApp ( $httpProvider, $mdDateLocaleProvider, $mdThemingProvider, $translateProvider, $urlRouterProvider, $compileProvider,
