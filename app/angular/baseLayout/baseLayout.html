@@ -1,7 +1,9 @@
 <div class="base-layout" ng-class="{'app-menu-closed': (menu && !menu.isVisible)}">
-    Base Layout
     <div class="app-menu-header">
         <div>
+            <i class="close-menu-icon material-icons"
+               ng-click="menu.toggleVisibility();"
+               md-colors="::{color: 'grey-500'}">{{!menu.isVisible ? 'menu' : 'ic_chevron_left'}}</i>
             <!-- <md-icon class="material-icons close-menu-icon"
                      md-colors="::{color: 'grey-500'}"
                      md-svg-icon="{{!menu.isVisible ? 'navigation:ic_menu' : 'navigation:ic_chevron_left'}}"

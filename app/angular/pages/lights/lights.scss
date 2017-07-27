@@ -5,11 +5,13 @@
         cursor: pointer;
 
         .light-icon {
-            border-radius: 50%;
-            padding: 8px 14px;
-            background-color: #26a6ee;
-            font-size: 16px;
-            font-weight: bold;
+            i {
+                height: 40px;
+                width: 40px;
+                font-size: 32px;
+                text-align: center;
+                margin: 24px;
+            }
         }
         .item-label {
             margin-bottom: 6px;
@@ -24,5 +26,22 @@
             transform: translateY(-8px);
             transition: all ease 0.5s;
         }
+
+        &.selected-light > * {
+            text-shadow: 0 0 24px rgba(#fff,0.54), 0 0 16px rgba(#fff,0.26);
+            transform: translateY(-8px);
+            transition: all ease 0.5s;
+        }
+    }
+
+    .md-sidenav-right {
+        min-width: 1300px;
+        top: 64px;
+        background-color: #2d2d46;
+    }
+
+    i.close-btn {
+        float: right;
+        margin-right: 16px;
     }
 }

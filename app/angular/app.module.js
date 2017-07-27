@@ -19,7 +19,7 @@
         'app.templates',
         'app.common',
         'app.components',
-        // 'app.vo',
+        'app.vo',
         'app.baseLayout',
         'app.pages'
     ]);

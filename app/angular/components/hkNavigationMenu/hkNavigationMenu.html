@@ -7,8 +7,7 @@
 
                 <a href ng-click="menu.clickOnMenuItem(menuItem)"
                    ng-style="{'color': $mdColors.getThemeColor('primary')}">
-                    <!-- <md-icon class="menu-item-icon material-icons"
-                             md-svg-icon="{{menuItem.mdIconName}}"></md-icon> -->
+                    <i class="menu-item-icon material-icons">{{menuItem.mdIconName}}</i>
                     <md-tooltip ng-if="!menu.isVisible" md-direction="right">{{menuItemLabel | translate}}</md-tooltip>
 
                     <span class="menu-item-label"

@@ -3,7 +3,7 @@
 
     angular
         .module('hk.navigation.menu')
-        .controller('hkNavigationMenu', NavigationMenu);
+        .directive('hkNavigationMenu', NavigationMenu);
 
     /* @ngInject */
     function NavigationMenu(navigationMenuService, $mdColors) {
@@ -11,7 +11,7 @@
             restrict: 'E',
             replace: true,
             scope: {},
-            templateUrl: 'angular/components/hkNavigationMenu/hkNavigationMenu.directive.html',
+            templateUrl: 'angular/components/hkNavigationMenu/hkNavigationMenu.html',
             link: function(scope) {
                 scope.menu = navigationMenuService;
                 scope.$mdColors = $mdColors;

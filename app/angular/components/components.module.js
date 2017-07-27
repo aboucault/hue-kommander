@@ -4,6 +4,7 @@
     angular
         .module('app.components', [
             'hk.app.bar',
-            'hk.navigation.menu'
+            'hk.navigation.menu',
+            'hk.light.details'
         ]);
 })();

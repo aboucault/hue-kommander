@@ -3,7 +3,7 @@
 
     angular
         .module('hk.app.bar')
-        .controller('hkAppBar', AppBar);
+        .directive('hkAppBar', AppBar);
 
     /* @ngInject */
     function AppBar() {
@@ -11,7 +11,7 @@
             restrict: 'E',
             replace: true,
             scope: {},
-            templateUrl: 'angular/components/hkAppBar/hkAppBar.directive.html',
+            templateUrl: 'angular/components/hkAppBar/hkAppBar.html',
             controller: AppBarController,
             controllerAs: 'appBarCtrl',
             bindToController: true

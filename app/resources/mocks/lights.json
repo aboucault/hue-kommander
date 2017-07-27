@@ -1,0 +1,20 @@
+{
+    "payload": [
+        {
+            "id": 0, "name": "Bed light 1", "type": "white", "on": true, "reachable": true, "brightness": 254,
+            "colorMode": "ct", "hue": "54120", "saturation": 254, "transitionTime": 2
+        },
+        {
+            "id": 1, "name": "Bed light 2", "type": "white", "on": false, "reachable": false, "brightness": 254,
+            "colorMode": "ct", "hue": "54120", "saturation": 254, "transitionTime": 2
+        },
+        {
+            "id": 2, "name": "Living roof", "type": "color", "on": true, "reachable": true, "brightness": 200,
+            "colorMode": "ct", "hue": "54120", "saturation": 120, "transitionTime": 2
+        },
+        {
+            "id": 3, "name": "Living lightstrip", "type": "lightstrip", "on": true, "reachable": true, "brightness": 254,
+            "colorMode": "ct", "hue": "54120", "saturation": 254, "transitionTime": 1
+        }
+    ]
+}

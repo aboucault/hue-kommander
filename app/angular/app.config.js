@@ -18,7 +18,7 @@
         // Menu
         navigationMenuServiceProvider.setMenuItems([{
             state: 'lights',
-            mdIconName: '',
+            mdIconName: 'lightbulb_outline',
             label: 'lights.menu'
         }]);
 
