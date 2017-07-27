@@ -1,7 +1,7 @@
 .app-template-menu {
     padding-top: 63px; // 63px +1 of menu-content border = 64px
-    border-right: 1px solid #d9d9d9;
-    background: #fdfdfd;
+    background-color: rgba(#fff,0.1);
+    color: rgba(#fff, 0.87);
 
     @include transition(all .3s);
     overflow-x: hidden;
@@ -19,7 +19,6 @@
 
     .menu-content {
         .menu-container {
-            border-top: 1px solid #dfdfdf;
             padding-top: 8px;
 
             .menu-item {

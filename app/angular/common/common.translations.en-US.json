@@ -1,4 +1,5 @@
 {
+    "appName": "Hue Kommander",
     "states": {
         "lights": "Lights"
     }
