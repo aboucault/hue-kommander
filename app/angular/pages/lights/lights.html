@@ -1,0 +1,24 @@
+<div class="lights" layout="row">
+
+    <div layout="column">
+        <div layout="row"
+             class="lights-list"
+             ng-repeat="light in lightsCtrl.lights"
+             ng-click="lightsCtrl.toggleDetails(light)"
+             ng-class="{'selected-light': (light.id === lightsCtrl.selectedLight.id) }">
+            <div class="light-icon"><i class="material-icons">{{ light.getTypeIconName() }}</i></div>
+            <div flex>
+                <h4 class="item-label">{{ light.name }}</h4>
+                <span class="item-state">{{ light.on === true ? 'On' : 'Off' }}</span>
+            </div>
+        </div>
+    </div>
+
+    <md-sidenav class="md-sidenav-right md-whiteframe-4dp"
+                md-component-id="right"
+                md-disable-backdrop>
+        <hk-light-details light="lightsCtrl.selectedLight">
+            <i class="material-icons close-btn" ng-click="lightsCtrl.close()">close</i>
+        </hk-light-details>
+    </md-sidenav>
+</div>

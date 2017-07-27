@@ -7,13 +7,20 @@
         .run(RunFn);
 
     /* @ngInject */
-    function ConfigureApp ( $httpProvider, $mdDateLocaleProvider, $mdThemingProvider, $translateProvider, $urlRouterProvider, $compileProvider/*,
-    $translatePartialLoaderProvider*/ ) {
+    function ConfigureApp ( $httpProvider, $mdDateLocaleProvider, $mdThemingProvider, $translateProvider, $urlRouterProvider, $compileProvider,
+    $translatePartialLoaderProvider, navigationMenuServiceProvider ) {
         // Default routing
-        $urlRouterProvider.otherwise('/dashboard');
+        $urlRouterProvider.otherwise('/lights');
 
         // Interceptors
         $httpProvider.interceptors.push('processingRequestsHttpInterceptor');
+
+        // Menu
+        navigationMenuServiceProvider.setMenuItems([{
+            state: 'lights',
+            mdIconName: 'lightbulb_outline',
+            label: 'lights.menu'
+        }]);
 
         // Transalation
         $translateProvider.useSanitizeValueStrategy('sanitize');
@@ -23,7 +30,7 @@
         // Optimization TODO set to false when going to PROD
         $compileProvider.debugInfoEnabled(true);
 
-        // $translatePartialLoaderProvider.addPart('angular/app.translations');
+        $translatePartialLoaderProvider.addPart('angular/app.translations');
 
         // $mdDateLocaleProvider.formatDate = (date) => date ? moment(date).format('DD.MM.YYYY') : '';
         //
@@ -67,7 +74,7 @@
             '200': 'FBD380',
             '300': 'F9C14D',
             '400': 'F8B326',
-            '500': 'F7A600',
+            '500': '79e3ff',
             '600': 'F69E00',
             '700': 'F59500',
             '800': 'F38B00',

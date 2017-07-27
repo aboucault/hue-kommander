@@ -4,6 +4,6 @@
     angular
         .module('app.pages', [
             'app.dependencies',
-            'app.dashboard'
+            'app.lights'
         ]);
 })();
