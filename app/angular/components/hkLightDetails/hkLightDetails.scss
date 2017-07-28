@@ -1,5 +1,25 @@
 .hk-light-details {
-    i.close-btn {
-        cursor: pointer;
+    .sidenav-title {
+        margin-top: 24px;
+
+        .light-switch {
+            margin-top: 25px;
+            margin-left: -54px;
+            margin-right: 6px;
+        }
+
+    }
+    .sidenav-content {
+        .item-modelid {
+            font-size: 20px;
+            margin-top: -15px;
+            margin-bottom: 60px;
+            color: rgba(#fff, 0.54);
+        }
+
+        .item-attribute {
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
     }
 }

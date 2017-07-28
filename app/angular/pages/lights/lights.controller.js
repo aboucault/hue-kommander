@@ -13,14 +13,6 @@
 
         function toggleDetails(light) {
             lightsCtrl.selectedLight = light;
-            if(!$mdSidenav('right').isOpen()) {
-                $mdSidenav('right').toggle();
-            }
-        }
-
-        function close() {
-            $mdSidenav('right').close();
-            lightsCtrl.selectedLight = undefined;
         }
 
         // ---- HELPER(s) ----
@@ -28,8 +20,9 @@
         lightsCtrl.refreshItems = function() {
             lightsCtrl.queryPromise = lightsService.list();
             return lightsCtrl.queryPromise.then(results => {
-                console.log(results);
                 lightsCtrl.lights = results;
+                lightsCtrl.selectedLight = results[0];
+                $mdSidenav('right').toggle();
             });
         };
 

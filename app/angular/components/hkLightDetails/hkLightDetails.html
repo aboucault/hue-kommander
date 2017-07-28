@@ -1,4 +1,19 @@
-<div class="hk-light-details">
-    <ng-transclude></ng-transclude>
-    <h3>{{hkLightDetailsCtrl.light.name}}</h3>
+<div class="hk-light-details" layout="row">
+    <div flex="50">
+        Image ampoule
+    </div>
+    <div layout="column">
+        <div class="sidenav-title" layout="row">
+            <md-switch class="md-primary light-switch" aria-label="Switch light" ng-model="hkLightDetailsCtrl.light.state.on"></md-switch>
+            <h1>{{ hkLightDetailsCtrl.light.name }}</h1>
+        </div>
+
+        <div class="sidenav-content" layout="column">
+            <span class="item-modelid">{{ hkLightDetailsCtrl.light.modelid }}</span>
+            <span class="item-attribute">{{ hkLightDetailsCtrl.light.state.on === true ? 'On' : 'Off' }} | {{ hkLightDetailsCtrl.light.state.reachable === true ? 'Reachable' : 'Unreachable' }}</span>
+            <span class="item-attribute">Color</span>
+            <span class="item-attribute">Intensity</span>
+            <span class="item-attribute">Serial</span>
+        </div>
+    </div>
 </div>

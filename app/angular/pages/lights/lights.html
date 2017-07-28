@@ -5,11 +5,11 @@
              class="lights-list"
              ng-repeat="light in lightsCtrl.lights"
              ng-click="lightsCtrl.toggleDetails(light)"
-             ng-class="{'selected-light': (light.uniqueId === lightsCtrl.selectedLight.uniqueId) }">
+             ng-class="{'selected-light': (light.uniqueid === lightsCtrl.selectedLight.uniqueid) }">
             <div class="light-icon"><i class="material-icons">{{ light.getTypeIconName() }}</i></div>
             <div flex>
                 <h4 class="item-label">{{ light.name }}</h4>
-                <span class="item-state">{{ light.state.on === true ? 'On' : 'Off' }}</span>
+                <span class="item-state">{{ light.state.on === true ? 'On' : 'Off' }} | {{ light.state.reachable === true ? 'Reachable' : 'Unreachable' }}</span>
             </div>
         </div>
     </div>
@@ -17,8 +17,6 @@
     <md-sidenav class="md-sidenav-right md-whiteframe-4dp"
                 md-component-id="right"
                 md-disable-backdrop>
-        <hk-light-details light="lightsCtrl.selectedLight">
-            <i class="material-icons close-btn" ng-click="lightsCtrl.close()">close</i>
-        </hk-light-details>
+        <hk-light-details light="lightsCtrl.selectedLight"></hk-light-details>
     </md-sidenav>
 </div>

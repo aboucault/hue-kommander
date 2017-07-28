@@ -55,8 +55,9 @@
     }
 
     // run
-    function RunFn( $rootScope, $state, $translate/*, SUPPORTED_LANGUAGE*/ ) {
+    function RunFn( $rootScope, $state, $translate, SUPPORTED_LANGUAGE, $mdColors, AppContext ) {
         // $translate.use(SUPPORTED_LANGUAGE);
+        $rootScope.$mdColors = $mdColors;
 
         $rootScope.$on('$stateChangeStart', function (evt, to, params) {
             // add redirectTo feature to ui-rooter
@@ -71,6 +72,13 @@
             // this is required if you want to prevent the $UrlRouter reverting the URL to the previous valid location
             event.preventDefault();
             console.error(event);
+        });
+
+        // Redirect to home page when user change
+        $rootScope.$on(AppContext.USER_CHANGED_EVENT, () => {
+            if($state.current && !$state.is('lights')) {
+                $state.go('lights');
+            }
         });
     }
 

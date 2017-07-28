@@ -33,6 +33,10 @@
             getTypeIconName: function() {
                 var modelid = (this.modelid) ? this.modelid : undefined;
                 return getTypeIconName(modelid);
+            },
+            getModelName: function() {
+                var modelid = (this.modelid) ? this.modelid : undefined;
+                return getModelName(modelid);
             }
         };
 
@@ -46,15 +50,38 @@
             if(angular.isArray(items)) {
                 return items.map(LightVO.create).filter(Number);
             }
-            return LightVO.create(items);
+            items = castObjectToArray(items);
+            items.slice(0, items.length);
+            items.map(LightVO.create).filter(Number);
+            return items;
+        }
+
+        function castObjectToArray(obj) {
+            return Object.keys(obj).map(key => obj[key]);
         }
 
         function getTypeIconName(modelid) {
-            switch(modelid) {
+            let model = getModeltype(modelid);
+            switch(model) {
                 case 'white': return 'lightbulb_outline';
-                case 'LCT007': return 'wb_incandescent';
-                case 'LST001': return 'wb_iridescent';
+                case 'LCT': return 'wb_incandescent';
+                case 'LST': return 'wb_iridescent';
+                default: return 'lightbulb_outline';
             }
+        }
+
+        function getModelName(modelid) {
+            let model = getModeltype(modelid);
+            switch (model) {
+                case 'LCT': return 'Hue colors';
+                case 'LST': return 'Hue lightstrip';
+                case 'LLC': return 'Hue bloom';
+                default: return 'unknown';
+            }
+        }
+
+        function getModeltype(modelid) {
+            return modelid.substring(0, 3);
         }
 
         return LightVO;

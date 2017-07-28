@@ -7,7 +7,6 @@
     angular
         .module('hk.light.details', [])
         .component('hkLightDetails', {
-            transclude: true,
             templateUrl: 'angular/components/hkLightDetails/hkLightDetails.html',
             controller: HkLightDetailsController,
             controllerAs: 'hkLightDetailsCtrl',

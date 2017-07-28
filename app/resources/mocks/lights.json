@@ -1,8 +1,49 @@
-{"3":{"state":{"on":false,"bri":239,"hue":35071,"sat":254,"effect":"none","xy":[0.3024,0.3074],"ct":153,"alert":"none","colormode":"xy","reachable":true},"type":"Extended color light","name":"Salon lampe a pied","modelid":"LCT001","manufacturername":"Philips",
-"uniqueid":"00:17:88:01:00:d9:e1:40-0b","swversion":"5.50.1.19085"},"4":{"state":{"on":false,"bri":239,"hue":38282,"sat":160,"effect":"none","xy":[0.2597,0.3274],"alert":"none","colormode":"xy","reachable":true},"type":"Color light","name":"Salon bloom","modelid":"LLC011","manufacturername":"Philips",
-"uniqueid":"00:17:88:01:01:24:0e:9d-0b","swversion":"5.23.1.13452"},"5":{"state":{"on":false,"bri":239,"hue":38282,"sat":160,"effect":"none","xy":[0.2597,0.3274],"alert":"none","colormode":"xy","reachable":true},"type":"Color light","name":"Salon lightstrip","modelid":"LST001","manufacturername":"Philips",
-"uniqueid":"00:17:88:01:00:cb:5f:73-0b","swversion":"5.23.1.13452"},"6":{"state":{"on":true,"bri":126,"hue":14956,"sat":140,"effect":"none","xy":[0.4578,0.4100],"ct":367,"alert":"none","colormode":"xy","reachable":false},"type":"Extended color light","name":"Couloir salle de bain","modelid":"LCT007","manufacturername":"Philips","uniqueid":"00:17:88:01:10:5d:1e:61-0b",
-"swversion":"5.50.1.19085"},"7":{"state":{"on":true,"bri":126,"hue":10778,"sat":251,"effect":"none","xy":[0.4578,0.4100],"ct":367,"alert":"none","colormode":"xy","reachable":false},"type":"Extended color light","name":"Couloir placard","modelid":"LCT007","manufacturername":"Philips","uniqueid":"00:17:88:01:10:4e:e1:ce-0b",
-"swversion":"5.50.1.19085"},"8":{"state":{"on":false,"bri":98,"hue":35071,"sat":254,"effect":"none","xy":[0.3024,0.3074],"ct":153,"alert":"none","colormode":"xy","reachable":true},"type":"Extended color light","name":"Salon porte","modelid":"LCT007","manufacturername":"Philips",
-"uniqueid":"00:17:88:01:10:5d:1f:f2-0b","swversion":"5.50.1.19085"},"9":{"state":{"on":true,"bri":239,"hue":38282,"sat":160,"effect":"none","xy":[0.2597,0.3274],"alert":"select","colormode":"xy","reachable":false},"type":"Color light","name":"Hue iris 1","modelid":"LLC010","manufacturername":"Philips",
-"uniqueid":"00:17:88:01:00:c0:6f:c0-0b","swversion":"5.23.1.13452"}}
+{
+    "3": {
+        "state": {
+            "on":false,
+            "bri":239,
+            "hue":35071,
+            "sat":254,
+            "effect":"none",
+            "xy":[0.3024,0.3074],
+            "ct":153,
+            "alert":"none",
+            "colormode":"xy",
+            "reachable":true
+        },
+        "type":"Extended color light",
+        "name":"Salon lampe a pied",
+        "modelid":"LCT001",
+        "manufacturername":"Philips",
+        "uniqueid":"00:17:88:01:00:d9:e1:40-0b",
+        "swversion":"5.50.1.19085"
+    },
+    "4": {
+        "state":{"on":false,"bri":239,"hue":38282,"sat":160,"effect":"none","xy":[0.2597,0.3274],"alert":"none","colormode":"xy","reachable":true},
+        "type":"Color light","name":"Salon bloom","modelid":"LLC011","manufacturername":"Philips",
+        "uniqueid":"00:17:88:01:01:24:0e:9d-0b","swversion":"5.23.1.13452"
+    },
+    "5": {
+        "state":{"on":false,"bri":239,"hue":38282,"sat":160,"effect":"none","xy":[0.2597,0.3274],"alert":"none","colormode":"xy","reachable":true},"type":"Color light","name":"Salon lightstrip","modelid":"LST001","manufacturername":"Philips",
+        "uniqueid":"00:17:88:01:00:cb:5f:73-0b","swversion":"5.23.1.13452"
+    },
+    "6": {
+        "state":{"on":true,"bri":126,"hue":14956,"sat":140,"effect":"none","xy":[0.4578,0.4100],"ct":367,"alert":"none","colormode":"xy","reachable":false},
+        "type":"Extended color light","name":"Couloir salle de bain","modelid":"LCT007",
+        "manufacturername":"Philips","uniqueid":"00:17:88:01:10:5d:1e:61-0b","swversion":"5.50.1.19085"
+    },
+    "7": {
+        "state":{"on":true,"bri":126,"hue":10778,"sat":251,"effect":"none","xy":[0.4578,0.4100],"ct":367,"alert":"none","colormode":"xy","reachable":false},
+        "type":"Extended color light","name":"Couloir placard","modelid":"LCT007","manufacturername":"Philips","uniqueid":"00:17:88:01:10:4e:e1:ce-0b",
+        "swversion":"5.50.1.19085"
+    },
+    "8": {
+        "state":{"on":false,"bri":98,"hue":35071,"sat":254,"effect":"none","xy":[0.3024,0.3074],"ct":153,"alert":"none","colormode":"xy","reachable":true},"type":"Extended color light","name":"Salon porte","modelid":"LCT007","manufacturername":"Philips",
+        "uniqueid":"00:17:88:01:10:5d:1f:f2-0b","swversion":"5.50.1.19085"
+    },
+    "9": {
+        "state":{"on":true,"bri":239,"hue":38282,"sat":160,"effect":"none","xy":[0.2597,0.3274],"alert":"select","colormode":"xy","reachable":false},"type":"Color light","name":"Hue iris 1","modelid":"LLC010","manufacturername":"Philips",
+        "uniqueid":"00:17:88:01:00:c0:6f:c0-0b","swversion":"5.23.1.13452"
+    }
+}
