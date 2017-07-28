@@ -20,7 +20,7 @@
             function serviceFn($q, $injector, urls) {
                 var self = this;
 
-                var _currentErrors = []
+                var _currentErrors = [],
                     _isModalOpen = false;
 
                 var httpErrorsInterceptorService = {

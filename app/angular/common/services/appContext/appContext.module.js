@@ -4,7 +4,7 @@
     angular
         .module('app.common.services.appContext', [
             'angular-storage',
-            'ui-router',
+            'ui.router',
             'pascalprecht.translate',
             'app.common'
         ]);
