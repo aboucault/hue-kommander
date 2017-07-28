@@ -1,0 +1,37 @@
+.http-error-modal {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    width: 280px;
+
+    .header {
+        padding: 24px;
+
+        .title {
+            font-weight: 500;
+            font-size: 20px;
+            margin-bottom: 14px;
+        }
+
+        .message {
+            font-size: 16px;
+            color: #757575;
+        }
+
+        textarea {
+            margin-top: 14px;
+            width: 100%;
+            resize: none;
+        }
+    }
+
+    .footer {
+        border-top: none;
+
+        button {
+            margin: 0;
+            padding: 0 12px;
+            min-width: 64px;
+        }
+    }
+}

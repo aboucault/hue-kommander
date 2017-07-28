@@ -5,11 +5,11 @@
              class="lights-list"
              ng-repeat="light in lightsCtrl.lights"
              ng-click="lightsCtrl.toggleDetails(light)"
-             ng-class="{'selected-light': (light.id === lightsCtrl.selectedLight.id) }">
+             ng-class="{'selected-light': (light.uniqueId === lightsCtrl.selectedLight.uniqueId) }">
             <div class="light-icon"><i class="material-icons">{{ light.getTypeIconName() }}</i></div>
             <div flex>
                 <h4 class="item-label">{{ light.name }}</h4>
-                <span class="item-state">{{ light.on === true ? 'On' : 'Off' }}</span>
+                <span class="item-state">{{ light.state.on === true ? 'On' : 'Off' }}</span>
             </div>
         </div>
     </div>

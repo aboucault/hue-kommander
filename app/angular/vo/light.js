@@ -10,24 +10,29 @@
 
         function LightVO(data) {
             var defaults = {
-                id: undefined,
+                uniqueid: undefined,
                 name: undefined,
-                type: undefined,
-                on: undefined,
-                reachable: undefined,
-                brightness: undefined,
-                colorMode: undefined,
-                hue: undefined,
-                saturation: undefined,
-                transitionTime: undefined
+                modelid: undefined,
+                state: {
+                    alert: undefined,
+                    bri: undefined,
+                    colormode: undefined,
+                    ct: undefined,
+                    effect: undefined,
+                    hue: undefined,
+                    reachable: undefined,
+                    sat: undefined,
+                    xy: [undefined],
+                    on: undefined
+                }
             };
             angular.extend(this, defaults, data);
         }
 
         LightVO.prototype = {
             getTypeIconName: function() {
-                var type = (this.type) ? this.type : undefined;
-                return getTypeIconName(type);
+                var modelid = (this.modelid) ? this.modelid : undefined;
+                return getTypeIconName(modelid);
             }
         };
 
@@ -39,16 +44,16 @@
 
         LightVO.fromArray = function(items) {
             if(angular.isArray(items)) {
-                return items.map(LightVO.create).filter(Boolean);
+                return items.map(LightVO.create).filter(Number);
             }
             return LightVO.create(items);
         }
 
-        function getTypeIconName(type) {
-            switch(type) {
+        function getTypeIconName(modelid) {
+            switch(modelid) {
                 case 'white': return 'lightbulb_outline';
-                case 'color': return 'wb_incandescent';
-                case 'lightstrip': return 'wb_iridescent';
+                case 'LCT007': return 'wb_incandescent';
+                case 'LST001': return 'wb_iridescent';
             }
         }
 

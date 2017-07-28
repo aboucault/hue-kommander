@@ -6,7 +6,7 @@
         .controller('LightsController', LightsController);
 
     /* @ngInject */
-    function LightsController($mdSidenav, lightsService) {
+    function LightsController($mdSidenav, $http, lightsService) {
         var lightsCtrl = this;
 
         // ---- HANDLER(s) ----
@@ -28,11 +28,13 @@
         lightsCtrl.refreshItems = function() {
             lightsCtrl.queryPromise = lightsService.list();
             return lightsCtrl.queryPromise.then(results => {
+                console.log(results);
                 lightsCtrl.lights = results;
             });
         };
 
         // ---- INITIALIZE ----
+
         function init() {
             lightsCtrl.toggleDetails = toggleDetails;
             lightsCtrl.close = close;

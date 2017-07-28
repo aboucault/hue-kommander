@@ -2,5 +2,29 @@
     "appName": "Hue Kommander",
     "states": {
         "lights": "Lights"
+    },
+    "error": {
+        "defaults": {
+            "403": {
+                "title": "Access denied",
+                "message": "The operation you requested was unsuccessful."
+            },
+            "404": {
+                "title": "Resource not found",
+                "message": "Try refreshing your browser."
+            },
+            "408": {
+                "title": "Request timed out",
+                "message": "Try refreshing your browser."
+            },
+            "500": {
+                "title": "Internal servor error",
+                "message": "The operation you requested was unsuccessful."
+            },
+            "default": {
+                "title": "Multiple errors occured",
+                "message": "The operation you requested was unsuccessful."
+            }
+        }
     }
 }
