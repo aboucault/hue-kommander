@@ -4,6 +4,7 @@
     angular
         .module('app.lights', [
             'app.dependencies',
+            'app.common',
             'app.components',
             'app.vo'
         ])

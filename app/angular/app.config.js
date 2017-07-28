@@ -10,12 +10,16 @@
 
     /* @ngInject */
     function ConfigureApp ( $httpProvider, $mdDateLocaleProvider, $mdThemingProvider, $translateProvider, $urlRouterProvider, $compileProvider,
-    $translatePartialLoaderProvider, navigationMenuServiceProvider ) {
+    $translatePartialLoaderProvider, navigationMenuServiceProvider, urlsProvider ) {
         // Default routing
         $urlRouterProvider.otherwise('/lights');
 
         // Interceptors
+        $httpProvider.interceptors.push('httpErrorsInterceptor');
+        // Visual loaders
         $httpProvider.interceptors.push('processingRequestsHttpInterceptor');
+        $httpProvider.interceptors.push('contextReplacementInterceptor');
+        $httpProvider.interceptors.push('languageHeaderInterceptor');
 
         // Menu
         navigationMenuServiceProvider.setMenuItems([{
@@ -23,6 +27,9 @@
             mdIconName: 'lightbulb_outline',
             label: 'lights.menu'
         }]);
+
+        // Set up API URL
+        urlsProvider.restURL = 'http://192.168.1.56/api/__username__/';
 
         // Transalation
         $translateProvider.useSanitizeValueStrategy('sanitize');
