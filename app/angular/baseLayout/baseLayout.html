@@ -1,10 +1,9 @@
-<div class="base-layout" ng-class="{'app-menu-closed': (menu && !menu.isVisible)}">
+<div class="base-layout" ng-class="{'app-menu-closed': (baseLayoutCtrl.navigationMenuService && !baseLayoutCtrl.navigationMenuService.isVisible)}">
     <div class="app-menu-header" layout="row">
-        <h3>{{ 'appName' | translate }}</h3>
         <div>
+            <h3>{{ 'appName' | translate }}</h3>
             <i class="close-menu-icon material-icons"
-               ng-click="menu.toggleVisibility();"
-               md-colors="::{color: 'grey-500'}">{{!menu.isVisible ? 'menu' : 'ic_chevron_left'}}</i>
+               ng-click="baseLayoutCtrl.navigationMenuService.toggleVisibility();">{{!baseLayoutCtrl.navigationMenuService.isVisible ? 'menu' : 'ic_chevron_left'}}</i>
         </div>
     </div>
 

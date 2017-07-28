@@ -26,6 +26,16 @@
             state: 'lights',
             mdIconName: 'lightbulb_outline',
             label: 'lights.menu'
+        },
+        {
+            state: 'scenes',
+            mdIconName: 'filter',
+            label: 'scenes.menu'
+        },
+        {
+            state: 'settings',
+            mdIconName: 'settings_remote',
+            label: 'settings.menu'
         }]);
 
         // Set up API URL

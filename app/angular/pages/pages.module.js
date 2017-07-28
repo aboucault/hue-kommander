@@ -4,6 +4,8 @@
     angular
         .module('app.pages', [
             'app.dependencies',
-            'app.lights'
+            'app.lights',
+            'app.scenes',
+            'app.settings'
         ]);
 })();

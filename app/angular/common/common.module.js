@@ -3,7 +3,12 @@
 
     angular
         .module('app.common', [
-            'app.common.services.appContext'
+            'app.common.services.appContext',
+            'pascalprecht.translate',
+            'ngAnimate',
+            'ngSanitize',
+            'ui.router',
+            'angular-storage'
         ])
         .config(function($translatePartialLoaderProvider) {
             $translatePartialLoaderProvider.addPart('angular/common/common.translations');

@@ -1,7 +1,7 @@
 .app-template-menu {
     padding-top: 63px; // 63px +1 of menu-content border = 64px
     background-color: rgba(#fff,0.1);
-    color: rgba(#fff, 0.87);
+    color: rgba(#fff,0.87);
 
     @include transition(all .3s);
     overflow-x: hidden;
@@ -22,7 +22,7 @@
             padding-top: 8px;
 
             .menu-item {
-                height: 48px;
+                height: 60px;
                 display: flex;
                 align-items: center;
 
@@ -42,15 +42,14 @@
                         display: inline-block;
                         text-align: center;
                         vertical-align: sub;
-                        font-size: 20px;
-                        color: rgba(255,255,255, 0.54);
+                        color: rgba(#fff,0.7);
                         margin-left: 24px;
                     }
 
                     .menu-item-label {
                         font-size: 14px;
                         font-weight: 600;
-                        color: rgba(0,0,0,0.87);
+                        color: rgba(#fff,0.7);
                         padding-left: 30px;
                     }
                 }

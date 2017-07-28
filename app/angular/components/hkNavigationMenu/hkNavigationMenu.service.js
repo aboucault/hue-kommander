@@ -15,7 +15,7 @@
 
                 var _selectedMenuItem;
                 var _visible = true;
-                var animationTiming =250;
+                var animationTiming = 250;
 
                 init();
 

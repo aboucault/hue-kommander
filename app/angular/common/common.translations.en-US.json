@@ -1,7 +1,9 @@
 {
     "appName": "Hue Kommander",
     "states": {
-        "lights": "Lights"
+        "lights": "Lights",
+        "scenes": "Scenes",
+        "settings": "Settings"
     },
     "error": {
         "defaults": {

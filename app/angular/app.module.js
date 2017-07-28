@@ -5,6 +5,7 @@
     angular.module('app.dependencies', [
         'ngMaterial',
         'ngMessages',
+        'ngAnimate',
         'ngSanitize',
         'ngResource',
         'ui.router',

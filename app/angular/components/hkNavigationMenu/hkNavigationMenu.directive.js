@@ -15,6 +15,7 @@
             link: function(scope) {
                 scope.menu = navigationMenuService;
                 scope.$mdColors = $mdColors;
+                // Automatically show/hide on resize
                 window.onresize = _onSizeChange;
 
                 updateMenuVisibility();
@@ -23,9 +24,9 @@
                 function _onSizeChange() {
                     updateMenuVisibility();
 
-                    if(!scope.$$phase) {
-                        scope.$digest();
-                    }
+                    // if(!scope.$$phase) {
+                    //     scope.$digest();
+                    // }
                 }
 
                 function updateMenuVisibility() {

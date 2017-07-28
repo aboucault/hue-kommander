@@ -17,6 +17,10 @@
             color: white !important;
             font-size: 24px;
         }
+        h3 {
+            flex: 1;
+            transform: translateX(-$menu-width + 64px);
+        }
         .page-title, .page-content {
             margin-left: 72px;
         }
@@ -42,7 +46,13 @@
         > div {
             display: flex;
             flex-direction: row;
-            // width: 100%;
+            width: 100%;
+
+            h3 {
+                margin-top: -11px;
+                margin-left: 8px;
+                transition: transform $menu-transition;
+            }
 
             .close-menu-icon {
                 transition: transform $menu-transition;
@@ -55,6 +65,7 @@
                 margin-top: 8px;
                 cursor: pointer;
                 text-align: center;
+                color: rgba(#fff,0.7);
             }
         }
     }
