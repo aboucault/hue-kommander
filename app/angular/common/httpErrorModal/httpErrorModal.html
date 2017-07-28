@@ -1,0 +1,25 @@
+<md-dialog class="http-error-modal">
+    <md-dialog-content>
+        <div class="header">
+            <div class="title">
+                {{ httpErrorModalCtrl.getGenericError().title | translate }}
+            </div>
+            <div class="message">
+                {{ httpErrorModalCtrl.getGenericError().message | translate }}
+            </div>
+            <textarea rows="3" ng-hide="true">
+                {{ httpErrorModalCtrl.getdetails() }}
+            </textarea>
+        </div>
+        <md-dialog-actions class="footer"
+                           md-colors="{color: 'primary'}">
+            <md-button ng-click="httpErrorModalCtrl.copyDetails()">
+                {{ 'common.copyDetails' | translate }}
+            </md-button>
+            <md-button ng-click="httpErrorModalCtrl.close()"
+                       class="md-button md-default-theme">
+                OK
+            </md-button>
+        </md-dialog-actions >
+    </md-dialog-content>
+</md-dialog>
