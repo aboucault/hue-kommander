@@ -15,6 +15,7 @@
             <span class="item-attribute">{{ hkLightDetailsCtrl.light.state.on === true ? 'On' : 'Off' }} | {{ hkLightDetailsCtrl.light.state.reachable === true ? 'Reachable' : 'Unreachable' }}</span>
             <span class="item-attribute">Color</span>
             <span class="item-attribute">Intensity</span>
+            <div md-color-picker ng-model="valueObj"></div>
             <md-slider flex class="md-primary"
                        md-discrete
                        ng-click="hkLightDetailsCtrl.setBrightness()"

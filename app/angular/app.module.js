@@ -11,7 +11,8 @@
         'ui.router',
         'angular-storage',
         'ngMaterial',
-        'pascalprecht.translate'
+        'pascalprecht.translate',
+        'mdColorPicker'
     ]);
 
     // Core
