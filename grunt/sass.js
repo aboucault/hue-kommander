@@ -16,7 +16,7 @@ module.exports = function(grunt, options) {
                         expand: true,
                         cwd: '<%= paths.app %>/angular',
                         src: ['*.scss'],
-                        dest: '.tmp/app',
+                        dest: '<%= paths.tmp %>/app',
                         ext: '.css'
                     }]
                 },
@@ -32,7 +32,7 @@ module.exports = function(grunt, options) {
                         expand: true,
                         cwd: '<%= paths.app %>/angular',
                         src: ['*.scss'],
-                        dest: '.tmp/app',
+                        dest: '<%= paths.tmp %>/app',
                         ext: '.css'
                     }]
                 }

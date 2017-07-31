@@ -18,7 +18,7 @@ module.exports = function(grunt, options) {
                         open: true,
                         middleware: function (connect) {
                             return [
-                                connect.static('.tmp/app'),
+                                connect.static(options.paths.tmp + '/app'),
                                 connect().use('/bower_components', connect.static('./bower_components')),
                                 connect.static(options.paths.app),
                                 proxySnippet
@@ -32,7 +32,7 @@ module.exports = function(grunt, options) {
                         port: 9001,
                         middleware: function (connect) {
                             return [
-                                connect.static('.tmp'),
+                                connect.static(options.paths.tmp + '/app'),
                                 connect.static('test'),
                                 connect().use(
                                     '/bower_components',
@@ -48,7 +48,7 @@ module.exports = function(grunt, options) {
                         open: true,
                         middleware: function (connect) {
                             return [
-                                connect.static('dist/app'),
+                                connect.static(options.paths.dist + '/app'),
                                 proxySnippet
                             ];
                         }

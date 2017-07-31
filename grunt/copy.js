@@ -10,7 +10,7 @@ module.exports = function(grunt, options) {
                     dest: '<%= paths.app %>/angular/app.config.js',
                     options: {
                         process: function(content) {
-                            return content.replace('disableDebugInfo(true)', 'disableDebugInfo(false)');
+                            return content.replace('debugInfoEnabled(true)', 'debugInfoEnabled(false)');
                         }
                     }
                 },

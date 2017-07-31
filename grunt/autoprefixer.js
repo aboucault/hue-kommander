@@ -15,9 +15,9 @@ module.exports = function(grunt, options) {
                     },
                     files: [{
                         expand: true,
-                        cwd: '.tmp',
+                        cwd: '<%= paths.tmp %>',
                         src: '{,*/}*.css',
-                        dest: '.tmp'
+                        dest: '<%= paths.tmp %>'
                     }]
                 },
                 dist: {
@@ -26,9 +26,9 @@ module.exports = function(grunt, options) {
                     },
                     files: [{
                         expand: true,
-                        cwd: '.tmp',
+                        cwd: '<%= paths.tmp %>',
                         src: '{,*/}*.css',
-                        dest: '.tmp'
+                        dest: '<%= paths.tmp %>'
                     }]
                 }
             }

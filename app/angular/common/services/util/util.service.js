@@ -1,4 +1,7 @@
-(function() {
+/*Copyright (c) 2017 by North Korean Headquarters Inc, Grenoble.
+This softaware is subject to copyright protection under the laws of France and other countries.
+ALL RIGHTS RESERVED.*/
+(function() {
     'use strict';
 
     angular
@@ -7,8 +10,8 @@
             var util = {
                 sanitize,
                 copyToClipBoard,
-                getLanguages: () => window.navigator.languages,
-                getLanguage: () => window.navigator.language
+                getLanguages: () => angular.copy(window.navigator.languages),
+                getLanguage: () => angular.copy(window.navigator.language)
             };
 
             return util;

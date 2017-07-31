@@ -12,7 +12,7 @@ module.exports = function(grunt, options) {
                     },
                     cwd: '<%= paths.app %>',
                     src: '**/*.html',
-                    dest: '.tmp/<%= paths.app %>/angular/app.templates.js'
+                    dest: '<%= paths.tmp %>/app/angular/app.templates.js'
                 }
             }
         }

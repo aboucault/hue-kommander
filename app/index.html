@@ -23,17 +23,6 @@
 <body>
     <div ui-view></div>
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
-    <!-- <script>
-    !function(A,n,g,u,l,a,r){A.GoogleAnalyticsObject=l,A[l]=A[l]||function(){
-        (A[l].q=A[l].q||[]).push(arguments)},A[l].l=+new Date,a=n.createElement(g),
-        r=n.getElementsByTagName(g)[0],a.src=u,r.parentNode.insertBefore(a,r)
-    }(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-    ga('create', 'UA-XXXXX-X');
-    ga('send', 'pageview');
-    </script> -->
-
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
@@ -54,59 +43,13 @@
     <script src="bower_components/a0-angular-storage/dist/angular-storage.js"></script>
     <script src="bower_components/ag-grid/dist/ag-grid.js"></script>
     <script src="bower_components/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js"></script>
-    <script src="bower_components/tinycolor/dist/tinycolor-min.js"></script>
+    <script src="bower_components/tinycolor/tinycolor.js"></script>
     <script src="bower_components/md-color-picker/dist/mdColorPicker.min.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js(.tmp/app) scripts/scripts.js -->
-    <!-- injectorjs -->
-    <script src="angular/app.module.js"></script>
-    <script src="angular/app.boot.js"></script>
-    <script src="angular/app.config.js"></script>
-    <script src="angular/app.templates.js"></script>
-    <script src="angular/baseLayout/baseLayout.module.js"></script>
-    <script src="angular/baseLayout/baseLayout.route.js"></script>
-    <script src="angular/baseLayout/baseLayout.controller.js"></script>
-    <script src="angular/common/common.module.js"></script>
-    <script src="angular/common/filters/defined.filter.js"></script>
-    <script src="angular/common/httpErrorModal/httpErrorModal.controller.js"></script>
-    <script src="angular/common/services/httpErrors.interceptor.js"></script>
-    <script src="angular/common/services/processingRequests.interceptor.js"></script>
-    <script src="angular/common/services/appContext/appContext.module.js"></script>
-    <script src="angular/common/services/appContext/appContext.service.js"></script>
-    <script src="angular/common/services/urlMapping/contextReplacement.interceptor.js"></script>
-    <script src="angular/common/services/urlMapping/languageHeader.interceptor.js"></script>
-    <script src="angular/common/services/urlMapping/urlMap.service.js"></script>
-    <script src="angular/common/services/urlMapping/urls.service.js"></script>
-    <script src="angular/common/services/util/util.service.js"></script>
-    <script src="angular/components/components.module.js"></script>
-    <script src="angular/components/hkAppBar/hkAppBar.module.js"></script>
-    <script src="angular/components/hkAppBar/hkAppBar.directive.js"></script>
-    <script src="angular/components/hkAppBar/hkAppBar.service.js"></script>
-    <script src="angular/components/hkBridgeConnexion/hkBridgeConnexion.component.js"></script>
-    <script src="angular/components/hkLightDetails/hkLightDetails.component.js"></script>
-    <script src="angular/components/hkNavigationMenu/hkNavigationMenu.module.js"></script>
-    <script src="angular/components/hkNavigationMenu/hkNavigationMenu.directive.js"></script>
-    <script src="angular/components/hkNavigationMenu/hkNavigationMenu.service.js"></script>
-    <script src="angular/pages/pages.module.js"></script>
-    <script src="angular/pages/lights/lights.module.js"></script>
-    <script src="angular/pages/lights/lights.route.js"></script>
-    <script src="angular/pages/lights/lights.controller.js"></script>
-    <script src="angular/pages/lights/lights.resource.js"></script>
-    <script src="angular/pages/lights/lights.service.js"></script>
-    <script src="angular/pages/scenes/scenes.module.js"></script>
-    <script src="angular/pages/scenes/scenes.route.js"></script>
-    <script src="angular/pages/scenes/scenes.controller.js"></script>
-    <script src="angular/pages/scenes/scenes.resource.js"></script>
-    <script src="angular/pages/scenes/scenes.service.js"></script>
-    <script src="angular/pages/settings/settings.module.js"></script>
-    <script src="angular/pages/settings/settings.route.js"></script>
-    <script src="angular/pages/settings/settings.controller.js"></script>
-    <script src="angular/pages/settings/settings.resource.js"></script>
-    <script src="angular/pages/settings/settings.service.js"></script>
-    <script src="angular/vo/light.js"></script>
-    <script src="angular/vo/vo.module.js"></script>
+    <!-- injector:js -->
     <!-- endinjector -->
     <!-- endbuild -->
 </body>

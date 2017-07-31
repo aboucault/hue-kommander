@@ -12,7 +12,7 @@ module.exports = function(grunt, options) {
                             '<%= paths.tmp %>/app/angular/app.templates.js',
                             '<%= paths.tmp %>/app/angular/**/*.module.js',
                             '<%= paths.tmp %>/app/angular/**/*.js',
-                            '<%= paths.tmp %>/app/angular/**/*.spec.js'
+                            '!<%= paths.tmp %>/app/angular/**/*.spec.js'
                         ]
                     }]
                 }
