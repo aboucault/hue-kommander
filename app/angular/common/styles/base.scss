@@ -1,5 +1,5 @@
 body {
-    background-color: #29283c;
+    background-color: #363248;
     font-size: $font-size-base;
     line-height: $line-height-base;
     margin: 0;
@@ -12,5 +12,15 @@ body {
     * {
         box-sizing: border-box;
         outline: 0;
+    }
+
+    .content-card {
+        transition: box-shadow .28s cubic-bezier(.4,0,.2,1);
+        overflow: hidden;
+        padding: 24px;
+
+        &:hover {
+            box-shadow: 0 10px 13px -6px rgba(0,0,0,.2), 0 20px 31px 3px rgba(0,0,0,.14), 0 8px 38px 7px rgba(0,0,0,.12);
+        }
     }
 }

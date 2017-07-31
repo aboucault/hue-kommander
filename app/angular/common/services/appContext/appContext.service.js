@@ -110,13 +110,13 @@ ALL RIGHTS RESERVED.*/
 
             // ---- PRIVATE HELPER(s) ----
 
-            function setCurrentUser(value) {
-                if(_currentUser !== value) {
-                    _currentUser = value;
-                    saveContextInLocalStorage();
-                    $rootScope.$broadcast(AppContext.USER_CHANGES_EVENT, value);
-                }
-            }
+            // function setCurrentUser(value) {
+            //     if(_currentUser !== value) {
+            //         _currentUser = value;
+            //         saveContextInLocalStorage();
+            //         $rootScope.$broadcast(AppContext.USER_CHANGES_EVENT, value);
+            //     }
+            // }
 
             function redirectToSettings() {
                 $state.go('settings');

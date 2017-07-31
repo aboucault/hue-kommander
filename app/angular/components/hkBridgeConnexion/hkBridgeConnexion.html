@@ -1,5 +1,5 @@
 <div class="hk-bridge-connexion">
-    <md-card class="bridge-card">
+    <md-card class="bridge-card content-card">
         <md-card-title>
             <md-card-title-text>
                 <span class="md-headline">No bridge was found!</span>
@@ -16,9 +16,9 @@
                        class="card-input"
                        ng-model="hkBridgeConnexionCtrl.ipAddress"
                        placeholder="0.0.0.0"
-                       required ng-pattern="/\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b/" md-maxlength="45">
-
-                <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
+                       required ng-pattern="/\b(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\b/"
+                       md-maxlength="45">
+                <div ng-messages="hkBridgeConnexionCtrl.ipAddress.$error" role="alert" multiple>
                     <div ng-message="required" class="my-message">You must supply your IP address.</div>
                     <div ng-message="ng-pattern" class="my-message">Invalid IP address.</div>
                     <div ng-message="md-maxlength" class="my-message">Incorrect IP address (too long).</div>

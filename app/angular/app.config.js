@@ -66,12 +66,12 @@ ALL RIGHTS RESERVED.*/
         setAngularMaterialPalette($mdThemingProvider);
 
         $mdThemingProvider.theme('default')
-                          .primaryPalette('paletteTest')
-                          .accentPalette('paletteTest');
+                          .primaryPalette('defaultpalette')
+                          .accentPalette('defaultpalette');
     }
 
     // run
-    function RunFn( $rootScope, $state, $translate, SUPPORTED_LANGUAGE, $mdColors, AppContext ) {
+    function RunFn( $rootScope, $state, $translate, SUPPORTED_LANGUAGE, $mdColors ) {
         // $translate.use(SUPPORTED_LANGUAGE);
         $rootScope.$mdColors = $mdColors;
 
@@ -91,34 +91,50 @@ ALL RIGHTS RESERVED.*/
         });
 
         // Redirect to home page when user change
-        $rootScope.$on(AppContext.USER_CHANGED_EVENT, () => {
-            if($state.current && !$state.is('lights')) {
-                $state.go('lights');
-            }
-        });
+        // $rootScope.$on(AppContext.USER_CHANGED_EVENT, () => {
+        //     if($state.current && !$state.is('lights')) {
+        //         $state.go('lights');
+        //     }
+        // });
     }
 
     // ---- HELPER(s) ----
 
     function setAngularMaterialPalette($mdThemingProvider) {
-        $mdThemingProvider.definePalette('paletteTest', {
-            '50': 'e1f5fe',
-            '100': 'b3e5fc',
-            '200': '81d4fa',
-            '300': '4fc3f7',
-            '400': '29b6f6',
-            '500': '0bc6fb',
-            '600': '03a2f3',
-            '700': '0298f1',
-            '800': '028fef',
-            '900': '017eec',
-            'A100': 'fff',
-            'A200': 'e0efff',
-            'A400': 'add4ff',
-            'A700': '93c7ff',
+        $mdThemingProvider.definePalette('defaultpalette', {
+            '50': 'e1f8ff',
+            '100': 'b4efff',
+            '200': '82e4ff',
+            '300': '50d9ff',
+            '400': '2bd0ff',
+            '500': '05c8ff',
+            '600': '04c2ff',
+            '700': '04bbff',
+            '800': '03b4ff',
+            '900': '01a7ff',
+            'A100': 'ffffff',
+            'A200': 'f2faff',
+            'A400': 'bfe6ff',
+            'A700': 'a6dcff',
             'contrastDefaultColor': 'light',
-            'contrastDarkColors': ['50', '100', '200', '300'],
-            'contrastLightColors': undefined
+            'contrastDarkColors': [
+                '50',
+                '100',
+                '200',
+                '300',
+                '400',
+                'A100',
+                'A200',
+                'A400',
+                'A700'
+            ],
+            'contrastLightColors': [
+                '500',
+                '600',
+                '700',
+                '800',
+                '900'
+            ]
         });
     }
 
