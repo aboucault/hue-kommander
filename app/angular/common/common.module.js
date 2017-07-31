@@ -6,6 +6,7 @@ ALL RIGHTS RESERVED.*/
 
     angular
         .module('app.common', [
+            'app.components',
             'app.common.services.appContext',
             'pascalprecht.translate',
             'ngAnimate',

@@ -9,7 +9,7 @@ ALL RIGHTS RESERVED.*/
         .factory('lightsService', lightsService);
 
     /* @ngInject */
-    function lightsService($q, $http, LightVO) {
+    function lightsService($q, $http, LightVO, lightsResource) {
         var service = {
             list: list,
             toggle: toggle,
@@ -32,7 +32,8 @@ ALL RIGHTS RESERVED.*/
         }
 
         function toggle(lightId, state) {
-            return $http.put('http://192.168.1.56/api/Dg8OPHcaRn6LguYd163xXJf7lD2egT8BCYCk3IY8/lights/' + lightId + '/state', {on: state});
+            return lightsResource.state.save({'lightId': lightId}, {on: state});
+            // return $http.put('http://192.168.1.56/api/Dg8OPHcaRn6LguYd163xXJf7lD2egT8BCYCk3IY8/lights/' + lightId + '/state', {on: state});
         }
 
         function brightness(lightId, bri) {

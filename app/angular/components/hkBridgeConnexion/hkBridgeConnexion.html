@@ -20,7 +20,7 @@
 
                 <div ng-messages="userForm.postalCode.$error" role="alert" multiple>
                     <div ng-message="required" class="my-message">You must supply your IP address.</div>
-                    <div ng-message="pattern" class="my-message">Invalid IP address.</div>
+                    <div ng-message="ng-pattern" class="my-message">Invalid IP address.</div>
                     <div ng-message="md-maxlength" class="my-message">Incorrect IP address (too long).</div>
                 </div>
             </md-input-container>
@@ -33,7 +33,7 @@
             </md-input-container>
         </md-card-content>
         <md-card-actions layout="row" layout-align="end center">
-            <md-button class="md-raised md-primary">Go!</md-button>
+            <md-button class="md-raised md-primary" ng-click="hkBridgeConnexionCtrl.registerUser()">Go!</md-button>
         </md-card-actions>
     </md-card>
 </div>

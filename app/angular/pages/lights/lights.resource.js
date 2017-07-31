@@ -11,11 +11,13 @@ ALL RIGHTS RESERVED.*/
     /* @ngInject */
     function lightsResource($resource, urls) {
         var resources = {
-            lights: urls.rest + 'lights'
+            lights: urls.rest + 'lights',
+            state: urls.rest + 'lights/:lightId/state'
         };
 
         var  service = {
-            lights: lights()
+            lights: lights(),
+            state: state
         };
 
         return service;
@@ -24,6 +26,10 @@ ALL RIGHTS RESERVED.*/
 
         function lights() {
             return $resource(resources.lights);
+        }
+
+        function state() {
+            return $resource(resources.state);
         }
     }
 })();

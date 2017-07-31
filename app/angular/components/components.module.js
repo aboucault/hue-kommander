@@ -7,6 +7,7 @@ ALL RIGHTS RESERVED.*/
     angular
         .module('app.components', [
             'app.dependencies',
+            'app.common',
             'hk.app.bar',
             'hk.bridge.connexion',
             'hk.navigation.menu',

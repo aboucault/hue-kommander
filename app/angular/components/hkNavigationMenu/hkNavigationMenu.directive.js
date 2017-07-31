@@ -17,6 +17,7 @@ ALL RIGHTS RESERVED.*/
             templateUrl: 'angular/components/hkNavigationMenu/hkNavigationMenu.html',
             link: function(scope) {
                 scope.menu = navigationMenuService;
+                console.log(scope.menu.menuItems);
                 scope.$mdColors = $mdColors;
                 // Automatically show/hide on resize
                 window.onresize = _onSizeChange;

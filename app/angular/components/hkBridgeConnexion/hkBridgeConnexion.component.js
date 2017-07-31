@@ -16,6 +16,15 @@ ALL RIGHTS RESERVED.*/
             bindings: {}
         });
 
-    function HkBridgeConnexionController() {
+    function HkBridgeConnexionController(appContext) {
+        var hkBridgeConnexionCtrl = this;
+
+        hkBridgeConnexionCtrl.registerUser = registerUser;
+
+        function registerUser() {
+            appContext.ipAddress = hkBridgeConnexionCtrl.ipAddress;
+            appContext.deviceName = hkBridgeConnexionCtrl.deviceName;
+            appContext.setupDiscoverContext(hkBridgeConnexionCtrl.ipAddress, hkBridgeConnexionCtrl.deviceName);
+        }
     }
 })();

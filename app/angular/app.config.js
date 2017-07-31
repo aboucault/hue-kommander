@@ -28,17 +28,20 @@ ALL RIGHTS RESERVED.*/
         navigationMenuServiceProvider.setMenuItems([{
             state: 'lights',
             mdIconName: 'lightbulb_outline',
-            label: 'lights.menu'
+            label: 'lights.menu',
+            restricted: false
         },
         {
             state: 'scenes',
             mdIconName: 'filter',
-            label: 'scenes.menu'
+            label: 'scenes.menu',
+            restricted: false
         },
         {
             state: 'settings',
             mdIconName: 'settings_remote',
-            label: 'settings.menu'
+            label: 'settings.menu',
+            restricted: false
         }]);
 
         // Set up API URL

@@ -38,7 +38,8 @@ ALL RIGHTS RESERVED.*/
                     set selectedMenuItem(value) {
                         _selectedMenuItem = value;
                     },
-                    clickOnMenuItem: clickOnMenuItem
+                    clickOnMenuItem: clickOnMenuItem,
+                    restrictView: restrictView
                 };
 
                 ////////////////////////
@@ -74,8 +75,15 @@ ALL RIGHTS RESERVED.*/
                 function clickOnMenuItem(menuItem) {
                     $rootScope.$broadcast('onNavigationMenuItemClick', menuItem);
                     if(menuItem.state) {
-                        $state.go(menuItem.state, menuItem.stateParams)
+                        $state.go(menuItem.state, menuItem.stateParams);
                     }
+                }
+
+                function restrictView(value) {
+                    let items = _menuItems;
+                    items[0].restricted = value;
+                    items[1].restricted = value;
+                    setMenuItems(items);
                 }
             }
 
