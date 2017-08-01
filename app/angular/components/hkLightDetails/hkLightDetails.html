@@ -6,7 +6,8 @@
         <div class="sidenav-title" layout="row">
             <md-switch class="md-primary light-switch"
                        aria-label="Switch light"
-                       ng-click="hkLightDetailsCtrl.toggleLight()"></md-switch>
+                       ng-model="hkLightDetailsCtrl.light.state.on"
+                       ng-change="hkLightDetailsCtrl.toggleLight()"></md-switch>
             <h1>{{ hkLightDetailsCtrl.light.name }}</h1>
         </div>
 
@@ -15,12 +16,17 @@
             <span class="item-attribute">{{ hkLightDetailsCtrl.light.state.on === true ? 'On' : 'Off' }} | {{ hkLightDetailsCtrl.light.state.reachable === true ? 'Reachable' : 'Unreachable' }}</span>
             <span class="item-attribute">Color</span>
             <span class="item-attribute">Intensity</span>
-            <div md-color-picker ng-model="valueObj"></div>
+            <md-color-picker ng-model="hkLightDetailsCtrl.rgbHueCoordinates"
+                             ng-change="hkLightDetailsCtrl.setHueColor(hkLightDetailsCtrl.rgbHueCoordinates)"
+                             type="1"
+                             hex="false"
+                             hsl="false"></md-color-picker>
+                             {{hkLightDetailsCtrl.rgbHueCoordinates}}
             <md-slider flex class="md-primary"
                        md-discrete
                        ng-click="hkLightDetailsCtrl.setBrightness()"
                        ng-model="hkLightDetailsCtrl.light.state.bri" step="1" min="0" max="254" aria-label="brightness"></md-slider>
-            <span class="item-attribute">Serial</span>
+            <span class="item-attribute" style="color:{{hkLightDetailsCtrl.rgbHueCoordinates}};">Serial</span>
         </div>
     </div>
 </div>

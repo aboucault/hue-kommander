@@ -7,9 +7,10 @@ ALL RIGHTS RESERVED.*/
     angular
         .module('app.scenes', [
             'app.dependencies',
+            'app.vo',
             'app.common',
             'app.components',
-            'app.vo'
+            'app.scenes.scene.details'
         ])
         .config(function($translatePartialLoaderProvider) {
             $translatePartialLoaderProvider.addPart('angular/pages/scenes/scenes.translations');

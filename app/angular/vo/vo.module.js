@@ -6,6 +6,7 @@ ALL RIGHTS RESERVED.*/
 
     angular
         .module('app.vo', [
-            'app.light'
+            'app.light',
+            'app.scene'
         ]);
 })();

@@ -1,3 +1,26 @@
-<div class="scenes" layout="row">
-    SCENES
+<div class="scenes" layout="column">
+    <div layout="row"
+         class="scenes-list"
+         ng-repeat="scene in scenesCtrl.scenes"
+         ng-if="$index % 4 === 0">
+
+        <md-card ng-repeat="ind in [$index, $index+1, $index+2, $index+3]"
+                 ng-if="!scenesCtrl.scenes[ind].locked && scenesCtrl.scenes[ind].id"
+                 class="scene-card content-card"
+                 flex="20">
+
+            <md-card-actions layout="row" layout-align="start end" class="card-subheader">
+                <span class="card-title" layout="row" flex="nogrow">{{ scenesCtrl.scenes[ind].name }}</span>
+                <div flex></div>
+                <div layout="row" layout-align="end center" flex="nogrow">
+                    <md-button class="md-icon-button" aria-label="Edit scene" ui-sref="sceneDetails({sceneId: scenesCtrl.scenes[ind].id})">
+                        <i class="material-icons">mode_edit</i>
+                    </md-button>
+                    <md-button class="md-icon-button md-primary" aria-label="Delete scene" ng-click="scenesCtrl.deleteScene(scenesCtrl.scenes[ind].id, $index)">
+                        <i class="material-icons" >delete</i>
+                    </md-button>
+                </div>
+            </md-card-actions>
+        </md-card>
+    </div>
 </div>

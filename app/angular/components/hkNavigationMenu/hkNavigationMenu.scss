@@ -27,8 +27,13 @@
                 align-items: center;
 
                 &.active {
-                    .menu-item-icon, .menu-item-label {
-                        color: inherit;
+                    .menu-item-label {
+                        color: #dfdeee;
+                    }
+                    .menu-item-icon {
+                        background: -webkit-linear-gradient(#ff8769, #ff689e);
+                        -webkit-background-clip: text;
+                        -webkit-text-fill-color: transparent;
                     }
                 }
 
@@ -37,19 +42,18 @@
                     display: flex;
                     align-items: center;
                     cursor: pointer;
+                    color: #535c76;
 
                     .menu-item-icon {
                         display: inline-block;
                         text-align: center;
                         vertical-align: sub;
-                        color: rgba(#fff,0.7);
                         margin-left: 24px;
                     }
 
                     .menu-item-label {
                         font-size: 14px;
                         font-weight: 600;
-                        color: rgba(#fff,0.7);
                         padding-left: 30px;
                     }
                 }

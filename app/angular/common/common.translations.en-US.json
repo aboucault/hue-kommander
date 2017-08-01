@@ -3,6 +3,7 @@
     "states": {
         "lights": "Lights",
         "scenes": "Scenes",
+        "sceneDetails": "Scene details",
         "settings": "Settings"
     },
     "error": {

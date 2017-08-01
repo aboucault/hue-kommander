@@ -9,7 +9,31 @@ ALL RIGHTS RESERVED.*/
         .controller('ScenesController', ScenesController);
 
     /* @ngInject */
-    function ScenesController() {
-        // var scenesCtrl = this;
+    function ScenesController($mdSidenav, $http, scenesService) {
+        var scenesCtrl = this;
+
+        // ---- HELPER(s) ----
+
+        scenesCtrl.refreshItems = function() {
+            scenesCtrl.queryPromise = scenesService.list();
+            return scenesCtrl.queryPromise.then(results => {
+                scenesCtrl.scenes = results;
+                scenesCtrl.selectedScene = results[0];
+                $mdSidenav('right').toggle();
+            });
+        };
+
+        function deleteScene(sceneId, index) {
+            scenesCtrl.scenes.splice(index, 1);
+            scenesService.deleteScene(sceneId);
+        }
+
+        // ---- INITIALIZE ----
+
+        function init() {
+            scenesCtrl.deleteScene = deleteScene;
+            scenesCtrl.refreshItems();
+        }
+        init();
     }
 })();

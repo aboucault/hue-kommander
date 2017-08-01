@@ -130,8 +130,8 @@ ALL RIGHTS RESERVED.*/
 
             function reloadContext() {
                 if(IP_ADDRESS_STORAGE_KEY === 'IP_ADDRESS_STORAGE_KEY') {
-                    navigationMenuService.restrictView(true);
-                    redirectToSettings();
+                    // navigationMenuService.restrictView(true);
+                    //redirectToSettings();
                 }
                 return $http.get('http://' + IP_ADDRESS_STORAGE_KEY + '/api/config').then((results) => {
                     navigationMenuService.restrictView(false);

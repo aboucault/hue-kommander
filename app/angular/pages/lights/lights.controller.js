@@ -33,7 +33,6 @@ ALL RIGHTS RESERVED.*/
 
         function init() {
             lightsCtrl.toggleDetails = toggleDetails;
-            lightsCtrl.close = close;
             lightsCtrl.refreshItems();
         }
         init();

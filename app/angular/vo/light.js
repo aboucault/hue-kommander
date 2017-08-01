@@ -58,7 +58,7 @@ ALL RIGHTS RESERVED.*/
             items.slice(0, items.length);
             items.map(LightVO.create).filter(Number);
             return items;
-        }
+        };
 
         function castObjectToArray(obj) {
             let list = [];
