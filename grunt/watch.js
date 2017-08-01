@@ -22,21 +22,21 @@ module.exports = function(grunt, options) {
                     tasks: ['sass:app']
                 },
 
-                injectJS: {
-                    files: ['<%= paths.app %>/angular/**/*.js'],
-                    tasks: ['injector'],
-                    options: {
-                        event: ['added', 'deleted']
-                    }
-                },
+                // injectJS: {
+                //     files: ['<%= paths.app %>/angular/**/*.js'],
+                //     tasks: ['injector'],
+                //     options: {
+                //         event: ['added', 'deleted']
+                //     }
+                // },
 
-                testJS: {
-                    files: ['<%= paths.app %>/angular/**/*.js'],
-                    tasks: ['karma'],
-                    options: {
-                        event: ['changed']
-                    }
-                },
+                // testJS: {
+                //     files: ['<%= paths.app %>/angular/**/*.js'],
+                //     tasks: ['karma'],
+                //     options: {
+                //         event: ['changed']
+                //     }
+                // },
 
                 babel: {
                     files: ['<%= paths.app %>/angular/**/*.js'],
@@ -45,8 +45,8 @@ module.exports = function(grunt, options) {
 
                 livereload: {
                     files: [
-                        '.tmp/app/{,*/}*.css',
-                        '<%= paths.app %>/angular/app.templates.js',
+                        '<%= paths.tmp %>/app/{,*/}*.css',
+                        '<%= paths.tmp %>/app/angular/app.templates.js',
                     ],
                     options: {
                         livereload: true

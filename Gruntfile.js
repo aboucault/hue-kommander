@@ -18,7 +18,8 @@ module.exports = function (grunt) {
         configureProxies: 'grunt-connect-proxy',
         useminPrepare: 'grunt-usemin',
         configureApimock: 'grunt-connect-apimock',
-        ngtemplates: 'grunt-angular-templates'
+        ngtemplates: 'grunt-angular-templates',
+        usebanner: 'grunt-banner'
     });
 
     // Default options
@@ -26,13 +27,13 @@ module.exports = function (grunt) {
         config: {
             src: 'grunt/*.js'
         },
-        gitinfo: {},
         version: packageJson.version,
         paths: {
             app: bowerJson.appPath || 'app',
             dist: 'dist',
             tmp: '.tmp'
-        }
+        },
+        minify: (grunt.option('minify') !== undefined) ? grunt.option('minify') : true
         // proxies: [{ TODO
         //     context: '/HueKommanderWeb',
         //     host: 'serverName',
@@ -53,8 +54,8 @@ module.exports = function (grunt) {
         }
 
         grunt.task.run([
+            'usebanner:app',
             'clean:tmp',
-            'gitinfo',
             'ngtemplates:app',
             'babel:app',
             'injector:app',
@@ -70,13 +71,9 @@ module.exports = function (grunt) {
     });
 
     grunt.registerTask('serve-ES6', 'Start a webserver without babel transpilation', function (target) {
-        if (target === 'dist') {
-            return grunt.task.run(['build', 'configureProxies', 'configureApimock', 'connect:dist:keepalive']);
-        }
-
         grunt.task.run([
+            'usebanner:app',
             'clean:tmp',
-            'gitinfo',
             'ngtemplates:app',
             'injector:appES6',
             'wiredep:app',
@@ -113,8 +110,7 @@ module.exports = function (grunt) {
             grunt.task.run([
                 'gitinfo',
                 'copy:disableDebugInfo',
-                'copyDist',
-                'copy:distApp',
+                'copy:dist',
                 'ngtemplates:app',
                 'babel:app',
                 'injector:app',
@@ -122,7 +118,7 @@ module.exports = function (grunt) {
                 'sass:dist',
                 'autoprefixer:dist',
                 'useminPrepare',
-                'concat:app', // TODO concat:app or concat ?
+                //'concat:app', // TODO concat:app or concat ?
                 'ngAnnotate',
                 'cssmin',
                 'uglify',
@@ -140,11 +136,4 @@ module.exports = function (grunt) {
                 break;
         }
     });
-
-    grunt.registerTask('default', [
-        'newer:jshint',
-        'newer:jscs',
-        'test',
-        'build'
-    ]);
 };

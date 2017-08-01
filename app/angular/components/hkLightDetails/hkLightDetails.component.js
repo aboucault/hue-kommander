@@ -1,4 +1,7 @@
-(function() {
+/*Copyright (c) 2017 by North Korean Headquarters Inc, Grenoble.
+This softaware is subject to copyright protection under the laws of France and other countries.
+ALL RIGHTS RESERVED.*/
+(function() {
     'use strict';
 
     /*
@@ -15,6 +18,23 @@
             }
         });
 
-    function HkLightDetailsController() {
+    function HkLightDetailsController(lightsService) {
+        var hkLightDetailsCtrl = this;
+
+        hkLightDetailsCtrl.toggleLight = toggleLight;
+        hkLightDetailsCtrl.setBrightness = setBrightness;
+
+        function toggleLight() {
+            lightsService.toggle(hkLightDetailsCtrl.light.id, !hkLightDetailsCtrl.light.state.on).then((response) => {
+                console.log(response);
+            });
+            hkLightDetailsCtrl.light.state.on = !hkLightDetailsCtrl.light.state.on;
+        }
+
+        function setBrightness() {
+            lightsService.brightness(hkLightDetailsCtrl.light.id, hkLightDetailsCtrl.light.state.bri).then((response) => {
+                console.log(response);
+            });
+        }
     }
 })();

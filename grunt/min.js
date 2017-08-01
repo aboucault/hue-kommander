@@ -8,9 +8,15 @@ module.exports = function(grunt, options) {
             // concat, minify and revision files. Creates configurations in memory so
             // additional tasks can operate on them
             useminPrepare: {
+                html: '<%= paths.app %>/index.html',
                 options: {
+                    dest: '<%= paths.dist %>/app',
                     flow: {
                         html: {
+                            steps: {
+                                js: (options.minify) ? ['concat', 'uglify'] : ['concat'],
+                                css: ['cssmin']
+                            },
                             post: {
                                 js: [{
                                     name: 'concat',
@@ -21,7 +27,7 @@ module.exports = function(grunt, options) {
                                             return {
                                                 generated: {
                                                     files: [{
-                                                        dest: options.path.tmp + '/concat/scripts/vendor.js',
+                                                        dest: options.paths.tmp + '/concat/scripts/vendor.js',
                                                         src: files
                                                     }]
                                                 }
@@ -32,6 +38,14 @@ module.exports = function(grunt, options) {
                             }
                         }
                     }
+                }
+            },
+            // Performs rewrites based on filerev and the useminPrepare configuration
+            usemin: {
+                html: ['<%= paths.dist %>/app/{,*/}*.html'],
+                css: ['<%= paths.dist %>/app/{,*/}*.css'],
+                options: {
+                    assetsDir: ['<%= paths.dist %>/app']
                 }
             }
         }

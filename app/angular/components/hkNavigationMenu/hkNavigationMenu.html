@@ -3,10 +3,11 @@
         <div class="menu-container">
             <div class="menu-item"
                  ng-class="{'active': menu.selectedMenuItem.label === menuItem.label}"
-                 ng-repeat="menuItem in menu.menuItems">
+                 ng-repeat="menuItem in menu.menuItems"
+                 ng-if="menuItem.restricted === false">
 
                 <a href ng-click="menu.clickOnMenuItem(menuItem)"
-                   ng-style="{'color': $mdColors.getThemeColor('primary')}">
+                   ng-style="{'color': $mdColors.getThemeColor('default-defaultpalette-300')}">
                     <i class="menu-item-icon material-icons">{{menuItem.mdIconName}}</i>
                     <md-tooltip ng-if="!menu.isVisible" md-direction="right">{{menuItemLabel | translate}}</md-tooltip>
 

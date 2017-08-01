@@ -5,15 +5,16 @@ module.exports = function(grunt, options) {
         tasks :{
             // Run some tasks in parallel to speed up the build process
             clean: {
-                tmp: '.tmp',
+                tmp: {
+                    files: [{
+                        dot: true,
+                        src: [ '<%= paths.tmp %>' ]
+                    }]
+                },
                 dist: {
                     files: [{
                         dot: true,
-                        src: [
-                            '.tmp',
-                            '<%= paths.dist %>/{,*/}*',
-                            '!<%= paths.dist %>/.git{,*/}*'
-                        ]
+                        src: [ '<%= paths.dist %>' ]
                     }]
                 }
             }

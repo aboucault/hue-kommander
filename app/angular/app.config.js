@@ -1,4 +1,7 @@
-(function () {
+/*Copyright (c) 2017 by North Korean Headquarters Inc, Grenoble.
+This softaware is subject to copyright protection under the laws of France and other countries.
+ALL RIGHTS RESERVED.*/
+(function () {
     'use strict';
 
     angular
@@ -25,17 +28,20 @@
         navigationMenuServiceProvider.setMenuItems([{
             state: 'lights',
             mdIconName: 'lightbulb_outline',
-            label: 'lights.menu'
+            label: 'lights.menu',
+            restricted: false
         },
         {
             state: 'scenes',
             mdIconName: 'filter',
-            label: 'scenes.menu'
+            label: 'scenes.menu',
+            restricted: false
         },
         {
             state: 'settings',
             mdIconName: 'settings_remote',
-            label: 'settings.menu'
+            label: 'settings.menu',
+            restricted: false
         }]);
 
         // Set up API URL
@@ -60,12 +66,12 @@
         setAngularMaterialPalette($mdThemingProvider);
 
         $mdThemingProvider.theme('default')
-                          .primaryPalette('paletteTest')
-                          .accentPalette('paletteTest');
+                          .primaryPalette('defaultpalette')
+                          .accentPalette('defaultpalette');
     }
 
     // run
-    function RunFn( $rootScope, $state, $translate, SUPPORTED_LANGUAGE, $mdColors, AppContext ) {
+    function RunFn( $rootScope, $state, $translate, SUPPORTED_LANGUAGE, $mdColors ) {
         // $translate.use(SUPPORTED_LANGUAGE);
         $rootScope.$mdColors = $mdColors;
 
@@ -85,34 +91,50 @@
         });
 
         // Redirect to home page when user change
-        $rootScope.$on(AppContext.USER_CHANGED_EVENT, () => {
-            if($state.current && !$state.is('lights')) {
-                $state.go('lights');
-            }
-        });
+        // $rootScope.$on(AppContext.USER_CHANGED_EVENT, () => {
+        //     if($state.current && !$state.is('lights')) {
+        //         $state.go('lights');
+        //     }
+        // });
     }
 
     // ---- HELPER(s) ----
 
     function setAngularMaterialPalette($mdThemingProvider) {
-        $mdThemingProvider.definePalette('paletteTest', {
-            '50': 'FEF4E0',
-            '100': 'FDE4B3',
-            '200': 'FBD380',
-            '300': 'F9C14D',
-            '400': 'F8B326',
-            '500': '79e3ff',
-            '600': 'F69E00',
-            '700': 'F59500',
-            '800': 'F38B00',
-            '900': 'F17B00',
-            'A100': '31AFD3',
-            'A200': '2CA8CE',
-            'A400': '259FC8',
-            'A700': '1386B7',
+        $mdThemingProvider.definePalette('defaultpalette', {
+            '50': 'e1f8ff',
+            '100': 'b4efff',
+            '200': '82e4ff',
+            '300': '50d9ff',
+            '400': '2bd0ff',
+            '500': '05c8ff',
+            '600': '04c2ff',
+            '700': '04bbff',
+            '800': '03b4ff',
+            '900': '01a7ff',
+            'A100': 'ffffff',
+            'A200': 'f2faff',
+            'A400': 'bfe6ff',
+            'A700': 'a6dcff',
             'contrastDefaultColor': 'light',
-            'contrastDarkColors': ['50', '100', '200', '300'],
-            'contrastLightColors': undefined
+            'contrastDarkColors': [
+                '50',
+                '100',
+                '200',
+                '300',
+                '400',
+                'A100',
+                'A200',
+                'A400',
+                'A700'
+            ],
+            'contrastLightColors': [
+                '500',
+                '600',
+                '700',
+                '800',
+                '900'
+            ]
         });
     }
 

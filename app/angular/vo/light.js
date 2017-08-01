@@ -1,4 +1,7 @@
-(function() {
+/*Copyright (c) 2017 by North Korean Headquarters Inc, Grenoble.
+This softaware is subject to copyright protection under the laws of France and other countries.
+ALL RIGHTS RESERVED.*/
+(function() {
     'use strict';
 
     angular
@@ -10,6 +13,7 @@
 
         function LightVO(data) {
             var defaults = {
+                id: undefined,
                 uniqueid: undefined,
                 name: undefined,
                 modelid: undefined,
@@ -57,7 +61,12 @@
         }
 
         function castObjectToArray(obj) {
-            return Object.keys(obj).map(key => obj[key]);
+            let list = [];
+            for(let key in obj) {
+                obj[key].id = key;
+                list.push(obj[key]);
+            }
+            return list;
         }
 
         function getTypeIconName(modelid) {

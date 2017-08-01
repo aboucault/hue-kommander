@@ -1,4 +1,7 @@
-(function() {
+/*Copyright (c) 2017 by North Korean Headquarters Inc, Grenoble.
+This softaware is subject to copyright protection under the laws of France and other countries.
+ALL RIGHTS RESERVED.*/
+(function() {
     'use strict';
 
     angular
@@ -8,11 +11,13 @@
     /* @ngInject */
     function lightsResource($resource, urls) {
         var resources = {
-            lights: urls.rest + 'lights'
+            lights: urls.rest + 'lights',
+            state: urls.rest + 'lights/:lightId/state'
         };
 
         var  service = {
-            lights: lights()
+            lights: lights(),
+            state: state
         };
 
         return service;
@@ -21,6 +26,10 @@
 
         function lights() {
             return $resource(resources.lights);
+        }
+
+        function state() {
+            return $resource(resources.state);
         }
     }
 })();
