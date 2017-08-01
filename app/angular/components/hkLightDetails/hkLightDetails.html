@@ -14,7 +14,8 @@
 
         <div class="sidenav-content" layout="column">
             <span class="item-modelid">{{ hkLightDetailsCtrl.light.modelname }}</span>
-            <span class="item-attribute">{{ hkLightDetailsCtrl.light.state.on === true ? 'On' : 'Off' }} | {{ hkLightDetailsCtrl.light.state.reachable === true ? 'Reachable' : 'Unreachable' }}</span>
+            <span class="item-attribute"><i class="material-icons">power_settings_new</i>{{ hkLightDetailsCtrl.light.state.on === true ? 'On' : 'Off' }}</span>
+            <span class="item-attribute"><i class="material-icons" style="color: rgb(48, 226, 219)">wifi</i>{{ hkLightDetailsCtrl.light.state.reachable === true ? 'Reachable' : 'Unreachable' }}</span>
             <span class="item-attribute">Color</span>
             <span class="item-attribute">Intensity</span>
             <md-color-picker ng-model="hkLightDetailsCtrl.rgbHueCoordinates"

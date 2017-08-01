@@ -4,15 +4,20 @@
              class="lights-list"
              ng-repeat="light in lightsCtrl.lights"
              ng-click="lightsCtrl.toggleDetails(light)"
-             ng-class="{'selected-light': (light.uniqueid === lightsCtrl.selectedLight.uniqueid) }">
+             ng-class="{'selected-light': (light.uniqueid === lightsCtrl.selectedLight.uniqueid),
+                        'reachable-light': (light.state.reachable === true),
+                        'powered-light': (light.state.on === true)}">
             <div class="light-icon"><i class="material-icons">{{ light.iconname }}</i></div>
             <div flex>
                 <h4 class="item-label">{{ light.name }}</h4>
-                <span class="item-state">{{ light.state.on === true ? 'On' : 'Off' }} | {{ light.state.reachable === true ? 'Reachable' : 'Unreachable' }}</span>
+                <span class="item-state"><i class="material-icons power">power_settings_new</i> <i class="material-icons reachable">wifi</i></span>
             </div>
         </div>
         <div layout="row" class="add-light" layout-align="center center" flex="100">
-            <md-button ng-click="hkBridgeConnexionCtrl.registerUser()">ADD A LIGHT</md-button>
+            <div class="button-container">
+                    <md-button ng-click="hkBridgeConnexionCtrl.registerUser()">ADD A LIGHT</md-button>        
+            </div>
+
         </div>
     </div>
     <div layout="row" flex="80">

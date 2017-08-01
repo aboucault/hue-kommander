@@ -1,6 +1,6 @@
 .app-template-menu {
     padding-top: 63px; // 63px +1 of menu-content border = 64px
-    background-color: #454160;
+    background-color: rgb(42, 42, 70);
     color: rgba(#fff,0.87);
 
     @include transition(all .3s);
@@ -26,14 +26,18 @@
                 display: flex;
                 align-items: center;
 
+                &:hover {
+                    .menu-item-label, .menu-item-icon {
+                        color: rgb(234, 230, 251);
+                    }
+                }
+
                 &.active {
                     .menu-item-label {
-                        color: #dfdeee;
+                        color: rgb(234, 230, 251);
                     }
                     .menu-item-icon {
-                        background: -webkit-linear-gradient(#ff8769, #ff689e);
-                        -webkit-background-clip: text;
-                        -webkit-text-fill-color: transparent;
+                        color: rgb(48, 226, 219);
                     }
                 }
 
@@ -42,7 +46,7 @@
                     display: flex;
                     align-items: center;
                     cursor: pointer;
-                    color: #535c76;
+                    color: rgb(86, 85, 126);
 
                     .menu-item-icon {
                         display: inline-block;
