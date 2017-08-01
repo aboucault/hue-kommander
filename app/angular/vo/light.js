@@ -14,6 +14,8 @@ ALL RIGHTS RESERVED.*/
         function LightVO(data) {
             var defaults = {
                 id: undefined,
+                iconname: undefined,
+                modelname: undefined,
                 uniqueid: undefined,
                 name: undefined,
                 modelid: undefined,
@@ -21,6 +23,7 @@ ALL RIGHTS RESERVED.*/
                     alert: undefined,
                     bri: undefined,
                     colormode: undefined,
+                    rgb: undefined,
                     ct: undefined,
                     effect: undefined,
                     hue: undefined,
@@ -64,6 +67,8 @@ ALL RIGHTS RESERVED.*/
             let list = [];
             for(let key in obj) {
                 obj[key].id = key;
+                obj[key].iconname = getTypeIconName(obj[key].modelid);
+                obj[key].modelname =  getModelName(obj[key].modelid);
                 list.push(obj[key]);
             }
             return list;

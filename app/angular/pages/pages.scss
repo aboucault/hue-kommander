@@ -2,6 +2,26 @@
 @import "scenes/scenes";
 @import "settings/settings";
 
+
+.add-light {
+    bottom: 20px;
+    position: absolute;
+    float: right;
+
+    .md-button {
+        -webkit-border-image: -webkit-linear-gradient(#ff8769, #ff689e);
+        padding: 8px 15px;
+
+        border: 2px solid transparent;
+
+        -moz-border-image: -moz-linear-gradient(top, #ff8769 0%, #ff689e 100%);
+        -webkit-border-image: -webkit-linear-gradient(top, #ff8769 0%, #ff689e 100%);
+        border-image: linear-gradient(to bottom, #ff8769 0%, #ff689e 100%);
+
+        border-image-slice: 1;
+    }
+}
+
 .lights-list {
     height: 72px;
     cursor: pointer;
@@ -12,7 +32,7 @@
             width: 40px;
             font-size: 32px;
             text-align: center;
-            margin: 24px;
+            margin: 28px;
         }
     }
     .item-label {
@@ -36,8 +56,10 @@
     }
 }
 
+
 .md-sidenav-right {
     min-width: 1300px;
+    width: 100%;
     top: 64px !important;
     background-color: #2d2d46;
 }
