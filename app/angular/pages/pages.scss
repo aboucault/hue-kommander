@@ -9,16 +9,16 @@
 
 .button-container .md-button{
     -webkit-border-image: -webkit-linear-gradient(#ff8769, #ff689e);
-            padding: 8px 15px;
-            margin: 0;
+    padding: 6px 25px;
+    margin: 0;
 
-            border: 3px solid transparent;
+    border: 3px solid transparent;
 
-            -moz-border-image: -moz-linear-gradient(top, #ff8769 0%, #ff689e 100%);
-            -webkit-border-image: -webkit-linear-gradient(top, #ff8769 0%, #ff689e 100%);
-            border-image: linear-gradient(to bottom, #ff8769 0%, #ff689e 100%);
+    -moz-border-image: -moz-linear-gradient(top, #ff8769 0%, #ff689e 100%);
+    -webkit-border-image: -webkit-linear-gradient(top, #ff8769 0%, #ff689e 100%);
+    border-image: linear-gradient(to bottom, #ff8769 0%, #ff689e 100%);
 
-            border-image-slice: 1;
+    border-image-slice: 1;
 }
 
 // .add-light {
@@ -42,6 +42,7 @@
 
 .lights-list {
     height: 72px;
+    margin-bottom: 36px;
     cursor: pointer;
 
     color: rgba(#fff, 0.70);
@@ -53,12 +54,12 @@
             font-size: 32px;
             text-align: center;
             margin: 28px;
-
         }
     }
     .item-label {
-        margin-bottom: 6px;
+        margin-bottom: 2px;
         font-size: 16px;
+        font-weight: 400;
     }
     .item-state {
         color: rgba(#fff, 0.54);
@@ -75,7 +76,7 @@
 
     &.selected-light > * {
         text-shadow: 0 0 24px rgba(#fff,0.54), 0 0 16px rgba(#fff,0.26);
-        transform: translateY(-8px);
+        // transform: translateY(-8px);
         transition: all ease 0.5s;
         color: white;
     }

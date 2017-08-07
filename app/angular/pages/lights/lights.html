@@ -1,4 +1,4 @@
-<div class="lights" layout="row">
+<div class="lights" layout="row" layout-fill>
     <div layout="column" flex="20">
         <div layout="row"
              class="lights-list"
@@ -13,11 +13,10 @@
                 <span class="item-state"><i class="material-icons power">power_settings_new</i> <i class="material-icons reachable">wifi</i></span>
             </div>
         </div>
-        <div layout="row" class="add-light" layout-align="center center" flex="100">
+        <div layout="row" class="add-light" layout-align="center end" flex="100">
             <div class="button-container">
-                    <md-button ng-click="hkBridgeConnexionCtrl.registerUser()">ADD A LIGHT</md-button>        
+                    <md-button ng-click="hkBridgeConnexionCtrl.registerUser()">ADD A LIGHT</md-button>
             </div>
-
         </div>
     </div>
     <div layout="row" flex="80">
