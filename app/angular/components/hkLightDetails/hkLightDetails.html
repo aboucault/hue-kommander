@@ -18,12 +18,11 @@
             <span class="item-attribute"><i class="material-icons" style="color: rgb(48, 226, 219)">wifi</i>{{ hkLightDetailsCtrl.light.state.reachable === true ? 'Reachable' : 'Unreachable' }}</span>
             <span class="item-attribute">Color</span>
             <span class="item-attribute">Intensity</span>
-            <md-color-picker ng-model="hkLightDetailsCtrl.rgbHueCoordinates"
-                             ng-change="hkLightDetailsCtrl.setHueColor(hkLightDetailsCtrl.rgbHueCoordinates)"
+            <md-color-picker ng-model="hkLightDetailsCtrl.light.state.rgb"
+                             ng-change="hkLightDetailsCtrl.setHueColor()"
                              type="1"
                              hex="false"
                              hsl="false"></md-color-picker>
-                             {{hkLightDetailsCtrl.rgbHueCoordinates}}
             <md-slider flex class="md-primary"
                        md-discrete
                        ng-click="hkLightDetailsCtrl.setBrightness()"

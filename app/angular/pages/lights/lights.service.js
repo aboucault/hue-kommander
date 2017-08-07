@@ -17,7 +17,6 @@ ALL RIGHTS RESERVED.*/
             brightness: brightness,
             hueColor: hueColor,
             ////////////////////
-            cieToRgb: cieToRgb,
             rgbToCie: rgbToCie
         };
         return service;
@@ -57,25 +56,6 @@ ALL RIGHTS RESERVED.*/
         }
 
         /////////////////////////
-
-        function cieToRgb(cieCoord) {
-            let z = 1 - cieCoord[0] - cieCoord[1];
-            let Y = brightness; // The given brightness value
-            let X = (Y / cieCoord[1]) * cieCoord[0];
-            let Z = (Y / cieCoord[1]) * z;
-
-            // convert to rgb
-            let r =  X * 1.656492 - Y * 0.354851 - Z * 0.255038;
-            let g = -X * 0.707196 + Y * 1.655397 + Z * 0.036152;
-            let b =  X * 0.051713 - Y * 0.121364 + Z * 1.011530;
-
-            // apply reverse gamma correction
-            r = r <= 0.0031308 ? 12.92 * r : (1.0 + 0.055) * Math.pow(r, (1.0 / 2.4)) - 0.055;
-            g = g <= 0.0031308 ? 12.92 * g : (1.0 + 0.055) * Math.pow(g, (1.0 / 2.4)) - 0.055;
-            b = b <= 0.0031308 ? 12.92 * b : (1.0 + 0.055) * Math.pow(b, (1.0 / 2.4)) - 0.055;
-            // rgb values above are between 0 and 1
-            return [r*255, g*255, b*255];
-        }
 
         function rgbToCie(rgbCoord) {
 

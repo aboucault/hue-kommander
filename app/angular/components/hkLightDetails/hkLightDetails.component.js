@@ -9,23 +9,20 @@ ALL RIGHTS RESERVED.*/
      */
     angular
         .module('hk.light.details', [])
+        .config(function($compileProvider) {
+          $compileProvider.preAssignBindingsEnabled(true);
+        })
         .component('hkLightDetails', {
-            templateUrl: 'angular/components/hkLightDetails/hkLightDetails.html',
-            controller: HkLightDetailsController,
-            controllerAs: 'hkLightDetailsCtrl',
             bindings: {
                 light: '<' // the light to modify
-            }
+            },
+            controller: HkLightDetailsController,
+            controllerAs: 'hkLightDetailsCtrl',
+            templateUrl: 'angular/components/hkLightDetails/hkLightDetails.html'
         });
 
     function HkLightDetailsController(lightsService) {
         var hkLightDetailsCtrl = this;
-
-        this.$onInit = function () {
-                // let rgbHueCoordinates = lightsService.cieToRgb(hkLightDetailsCtrl.light.state.xy);
-                hkLightDetailsCtrl.rgbHueCoordinates = setRgbHueStringValue();
-
-        };
 
         hkLightDetailsCtrl.toggleLight = toggleLight;
         hkLightDetailsCtrl.setBrightness = setBrightness;
@@ -41,17 +38,13 @@ ALL RIGHTS RESERVED.*/
             lightsService.brightness(hkLightDetailsCtrl.light.id, hkLightDetailsCtrl.light.state.bri);
         }
 
-        function setHueColor(rgbColor) {
-            let coordinates = lightsService.rgbToCie(convertRgbStringHueValue(rgbColor));
+        function setHueColor() {
+            let coordinates = lightsService.rgbToCie(convertRgbStringHueValue(hkLightDetailsCtrl.light.state.rgb));
             hkLightDetailsCtrl.light.state.xy = [Number(coordinates[0]), Number(coordinates[1])];
             lightsService.hueColor(hkLightDetailsCtrl.light.id, hkLightDetailsCtrl.light.state.xy);
         }
 
         // ---- HELPER(s) ----
-
-        function setRgbHueStringValue() {
-            return 'rgb(255,0,0)';
-        }
 
         function convertRgbStringHueValue(rgbString) {
             return rgbString.substring(rgbString.indexOf('(') +1, rgbString.length -1).split(', ').map(Number);
