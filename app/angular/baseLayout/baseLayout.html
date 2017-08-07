@@ -1,17 +1,21 @@
 <div class="base-layout" ng-class="{'app-menu-closed': (baseLayoutCtrl.navigationMenuService && !baseLayoutCtrl.navigationMenuService.isVisible)}">
     <div class="app-menu-header" layout="row">
         <div>
-            <h3>{{ 'appName' | translate }}</h3>
-            <i class="close-menu-icon material-icons"
-               ng-click="baseLayoutCtrl.navigationMenuService.toggleVisibility();">{{!baseLayoutCtrl.navigationMenuService.isVisible ? 'menu' : 'ic_chevron_left'}}</i>
+            <h3><span>HUE</span>KOMMANDER</h3>
         </div>
+    </div>
+    <div ui-view="app-bar">
+        <hk-app-bar></hk-app-bar>
     </div>
 
     <div class="flex-wrapper">
         <hk-navigation-menu></hk-navigation-menu>
         <div class="app-container">
-            <div ui-view="app-bar">
-                <hk-app-bar></hk-app-bar>
+            <div class="close-menu"
+                 layout="row"
+                 layout-align="start center"
+                 ng-click="baseLayoutCtrl.navigationMenuService.toggleVisibility();">
+                <i class="close-menu-icon material-icons">{{!baseLayoutCtrl.navigationMenuService.isVisible ? 'ic_chevron_right' : 'ic_chevron_left'}}</i>
             </div>
             <div ui-view
                  class="page-content"

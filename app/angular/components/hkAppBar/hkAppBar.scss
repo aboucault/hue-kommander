@@ -1,25 +1,20 @@
 .hk-app-bar {
-    background-color: rgb(68, 66, 109);
+    background-color: #2F2E4B;
     color: rgba(#fff, 0.87);
-    box-shadow: 0px 14px 72px -7px rgba(0,0,0,0.15);
+    z-index: 6;
+    box-shadow: 0px 15px 50px -5px rgba(0, 0, 0, 0.25);
 
-    ul {
+    .header-left {
         margin: 0;
         padding: 0;
-        list-style: none;
-    }
-
-    ul li {
         height: 64px;
         display: flex;
         align-items: center;
-    }
-
-    .header-left {
         .page-title {
             font-size: 20px;
-            font-weight: 600;
-            padding-left: 24px;
+            font-weight: 400;
+            text-transform: uppercase;
+            text-align: center;
         }
     }
 }

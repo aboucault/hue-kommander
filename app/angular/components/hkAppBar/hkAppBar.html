@@ -1,13 +1,9 @@
 <div class="hk-app-bar">
     <div class="row">
-        <div class="col-xs-12">
-            <ul class="header-left">
-                <li>
-                    <div class="page-title">
-                        {{ appBarCtrl.getPageTitle() | translate }}
-                    </div>
-                </li>
-            </ul>
+        <div class="header-left">
+            <div class="page-title" layout="row" layout-align="center center" layout-fill>
+                {{ appBarCtrl.getPageTitle() | translate }}
+            </div>
         </div>
     </div>
 </div>
