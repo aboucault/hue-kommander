@@ -31,8 +31,7 @@ ALL RIGHTS RESERVED.*/
             // 'resources/mocks/lights.json'
             // return lightsResource.state.save({'lightId': lightId}, {on: state});
             $http.get('http://192.168.1.56/api/Dg8OPHcaRn6LguYd163xXJf7lD2egT8BCYCk3IY8/lights').then((response) => {
-                var data = response.data;
-                deferred.resolve(LightVO.fromArray(data));
+                deferred.resolve(LightVO.fromArray(response.data));
             });
             return deferred.promise;
         }

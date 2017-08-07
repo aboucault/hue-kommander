@@ -6,8 +6,7 @@
                  ng-repeat="menuItem in menu.menuItems"
                  ng-if="menuItem.restricted === false">
 
-                <a href ng-click="menu.clickOnMenuItem(menuItem)"
-                   ng-style="{'color': $mdColors.getThemeColor('default-defaultpalette-300')}">
+                <a href ng-click="menu.clickOnMenuItem(menuItem)">
                     <i class="menu-item-icon material-icons">{{menuItem.mdIconName}}</i>
                     <md-tooltip ng-if="!menu.isVisible" md-direction="right">{{menuItemLabel | translate}}</md-tooltip>
 

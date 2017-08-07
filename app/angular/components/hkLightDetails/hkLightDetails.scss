@@ -1,15 +1,19 @@
 .hk-light-details {
+
+    img.hue {
+        max-width: 450px;
+    }
     .sidenav-title {
         margin-top: 24px;
 
         .light-switch {
             margin-top: 25px;
-            margin-left: -54px;
             margin-right: 6px;
         }
 
     }
     .sidenav-content {
+        margin-left: 54px;
         .item-modelid {
             font-size: 20px;
             margin-top: -15px;

@@ -1,6 +1,7 @@
-<div class="hk-light-details" layout="row">
-    <div flex="50">
-        Image ampoule
+<div class="hk-light-details" layout="row" layout-fill>
+    <div flex="50" layout="row" layout-align="center center">
+        <img ng-if="hkLightDetailsCtrl.light.modelname === 'Hue colors'" class="hue" src="./images/extendedColors.png" />
+        <img ng-if="hkLightDetailsCtrl.light.modelname === 'Hue lightstrip'" class="hue" src="./images/lightstrip.png" />
     </div>
     <div layout="column">
         <div class="sidenav-title" layout="row">
@@ -12,8 +13,9 @@
         </div>
 
         <div class="sidenav-content" layout="column">
-            <span class="item-modelid">{{ hkLightDetailsCtrl.light.modelid }}</span>
-            <span class="item-attribute">{{ hkLightDetailsCtrl.light.state.on === true ? 'On' : 'Off' }} | {{ hkLightDetailsCtrl.light.state.reachable === true ? 'Reachable' : 'Unreachable' }}</span>
+            <span class="item-modelid">{{ hkLightDetailsCtrl.light.modelname }}</span>
+            <span class="item-attribute"><i class="material-icons">power_settings_new</i>{{ hkLightDetailsCtrl.light.state.on === true ? 'On' : 'Off' }}</span>
+            <span class="item-attribute"><i class="material-icons" style="color: rgb(48, 226, 219)">wifi</i>{{ hkLightDetailsCtrl.light.state.reachable === true ? 'Reachable' : 'Unreachable' }}</span>
             <span class="item-attribute">Color</span>
             <span class="item-attribute">Intensity</span>
             <md-color-picker ng-model="hkLightDetailsCtrl.rgbHueCoordinates"

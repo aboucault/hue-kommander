@@ -9,7 +9,7 @@ ALL RIGHTS RESERVED.*/
         .controller('LightsController', LightsController);
 
     /* @ngInject */
-    function LightsController($mdSidenav, $http, lightsService) {
+    function LightsController($mdSidenav, $timeout, lightsService) {
         var lightsCtrl = this;
 
         // ---- HANDLER(s) ----
