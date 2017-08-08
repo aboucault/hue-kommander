@@ -29,9 +29,12 @@ ALL RIGHTS RESERVED.*/
             // Get all lights // username: Dg8OPHcaRn6LguYd163xXJf7lD2egT8BCYCk3IY8
             // 'resources/mocks/lights.json'
             // return lightsResource.state.save({'lightId': lightId}, {on: state});
-            $http.get('http://192.168.1.56/api/Dg8OPHcaRn6LguYd163xXJf7lD2egT8BCYCk3IY8/lights').then((response) => {
+            $http.get('resources/mocks/lights.json').then((response) => {
                 deferred.resolve(LightVO.fromArray(response.data));
             });
+            // $http.get('http://192.168.1.56/api/Dg8OPHcaRn6LguYd163xXJf7lD2egT8BCYCk3IY8/lights').then((response) => {
+            //     deferred.resolve(LightVO.fromArray(response.data));
+            // });
             return deferred.promise;
         }
 

@@ -3,19 +3,33 @@
         <img ng-if="hkLightDetailsCtrl.light.modelname === 'Hue colors'" class="hue" src="./images/extendedColors.png" />
         <img ng-if="hkLightDetailsCtrl.light.modelname === 'Hue lightstrip'" class="hue" src="./images/lightstrip.png" />
     </div>
-    <div layout="column">
-        <div class="sidenav-title" layout="row">
-            <md-switch class="md-primary light-switch"
-                       aria-label="Switch light"
-                       ng-model="hkLightDetailsCtrl.light.state.on"
-                       ng-change="hkLightDetailsCtrl.toggleLight()"></md-switch>
-            <h1>{{ hkLightDetailsCtrl.light.name }}</h1>
+    <div flex="50" layout="column">
+        <div class="sidenav-title" layout="column">
+            <div layout="row">
+                <md-switch class="md-primary light-switch"
+                           aria-label="Switch light"
+                           ng-model="hkLightDetailsCtrl.light.state.on"
+                           ng-change="hkLightDetailsCtrl.toggleLight()"></md-switch>
+                <h1>{{ hkLightDetailsCtrl.light.name }}</h1>
+            </div>
+            <span class="item-modelid">{{ hkLightDetailsCtrl.light.modelname }}</span>
+            <span class="item-attribute">
+                <i class="material-icons" ng-class="{'powered-light': (hkLightDetailsCtrl.light.state.on === true)}">power_settings_new</i><i class="material-icons" ng-class="{'reachable-light': (hkLightDetailsCtrl.light.state.reachable === true)}">wifi</i></span>
         </div>
 
-        <div class="sidenav-content" layout="column">
-            <span class="item-modelid">{{ hkLightDetailsCtrl.light.modelname }}</span>
-            <span class="item-attribute"><i class="material-icons">power_settings_new</i>{{ hkLightDetailsCtrl.light.state.on === true ? 'On' : 'Off' }}</span>
-            <span class="item-attribute"><i class="material-icons" style="color: rgb(48, 226, 219)">wifi</i>{{ hkLightDetailsCtrl.light.state.reachable === true ? 'Reachable' : 'Unreachable' }}</span>
+        <div class="sidenav-content" layout="column" flex="100">
+            <div layout="row">
+                <div layout="column" class="light-card color-card" flex="50">
+                    <div layout="row" class="header">
+                        Color
+                    </div>
+                    <div class="content">
+                        Color picker
+                    </div>
+                </div>
+            </div>
+
+
             <span class="item-attribute">Color</span>
             <span class="item-attribute">Intensity</span>
             <md-color-picker ng-model="hkLightDetailsCtrl.light.state.rgb"
