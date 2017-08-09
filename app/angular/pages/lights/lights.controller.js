@@ -9,7 +9,7 @@ ALL RIGHTS RESERVED.*/
         .controller('LightsController', LightsController);
 
     /* @ngInject */
-    function LightsController($mdSidenav, $timeout, lightsService) {
+    function LightsController($timeout, lightsService) {
         var lightsCtrl = this;
 
         // ---- HANDLER(s) ----
@@ -25,7 +25,6 @@ ALL RIGHTS RESERVED.*/
             return lightsCtrl.queryPromise.then(results => {
                 lightsCtrl.lights = results;
                 lightsCtrl.selectedLight = results[0];
-                $mdSidenav('right').toggle();
             });
         };
 

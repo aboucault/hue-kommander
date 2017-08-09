@@ -1,4 +1,5 @@
 .hk-light-details {
+    padding: 20px;
 
     img.hue {
         max-width: 450px;
@@ -68,6 +69,31 @@
             &.color-card {
                 .header {
                     background: linear-gradient(to top right, #30BDE0 0%, $green-500 50%, #26DDD9 100%);
+                }
+
+                .color-picker-container {
+                    border-radius: 50%;
+                    @include square(190px);
+                    background-image: url('./images/rainbow.png');
+
+                    .color-picker {
+                        @include square(180px);
+                        padding: 10px;
+                        border-radius: 50%;
+                        background: #2f2e4b;
+                    }
+                    .color-display {
+                        @include square(60px);
+                        border-radius: 50%;
+                        border: 6px solid rgba(#2f2e4b,.38);
+                    }
+                }
+                .color-knob {
+                    @include cursor-grab();
+                    position: fixed;
+                    border-radius: 50%;
+                    @include square(30px);
+                    border: 3px solid rgba(#fff,.87);
                 }
             }
         }

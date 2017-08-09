@@ -13,17 +13,13 @@
                 <span class="item-state"><i class="material-icons power">power_settings_new</i> <i class="material-icons reachable">wifi</i></span>
             </div>
         </div>
-        <div layout="row" class="add-light" layout-align="center end" flex="100">
-            <div class="button-container">
+        <div layout="row" layout-align="center end" flex="100">
+            <div class="add-light-button-container">
                 <md-button ng-click="hkBridgeConnexionCtrl.registerUser()">ADD A LIGHT</md-button>
             </div>
         </div>
     </div>
-    <div layout="row" flex="80">
-        <md-sidenav class="md-sidenav-right md-whiteframe-4dp"
-                    md-component-id="right"
-                    md-disable-backdrop>
-            <hk-light-details light="lightsCtrl.selectedLight"></hk-light-details>
-        </md-sidenav>
+    <div layout="row" flex="80" class="sidenav-light">
+        <hk-light-details light="lightsCtrl.selectedLight" flex></hk-light-details>
     </div>
 </div>

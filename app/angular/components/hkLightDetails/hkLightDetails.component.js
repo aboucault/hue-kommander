@@ -24,9 +24,19 @@ ALL RIGHTS RESERVED.*/
     function HkLightDetailsController(lightsService) {
         var hkLightDetailsCtrl = this;
 
-        hkLightDetailsCtrl.toggleLight = toggleLight;
-        hkLightDetailsCtrl.setBrightness = setBrightness;
-        hkLightDetailsCtrl.setHueColor = setHueColor;
+        // ---- INITIALIZE ----
+
+        hkLightDetailsCtrl.$onInit = () => {
+            hkLightDetailsCtrl.toggleLight = toggleLight;
+            hkLightDetailsCtrl.setBrightness = setBrightness;
+            hkLightDetailsCtrl.setHueColor = setHueColor;
+            hkLightDetailsCtrl.moveColorPicker = moveColorPicker;
+            hkLightDetailsCtrl.colorPickerPosition = '0 0 0 91px';
+            hkLightDetailsCtrl.colorPickerOffsetX = 1440;
+            hkLightDetailsCtrl.colorPickerOffsetY = 322;
+            hkLightDetailsCtrl.activateColorPicker = false;
+        };
+
 
         // ---- HANDLER(s) ----
 
@@ -42,6 +52,32 @@ ALL RIGHTS RESERVED.*/
             let coordinates = lightsService.rgbToCie(convertRgbStringHueValue(hkLightDetailsCtrl.light.state.rgb));
             hkLightDetailsCtrl.light.state.xy = [Number(coordinates[0]), Number(coordinates[1])];
             lightsService.hueColor(hkLightDetailsCtrl.light.id, hkLightDetailsCtrl.light.state.xy);
+        }
+
+        function moveColorPicker(event) {
+            // event is a jquery instance of the mouse inside the color picker knob
+            // console.log(event);
+            if(hkLightDetailsCtrl.activateColorPicker === true) {
+                // get offsetTop and offsetLeft of target - the knob
+                // it will be used to change the knob position
+                hkLightDetailsCtrl.colorPickerOffsetX = event.target.offsetLeft;
+                hkLightDetailsCtrl.colorPickerOffsetY = event.target.offsetTop;
+                // add the value of the current movement
+                hkLightDetailsCtrl.colorPickerOffsetX += event.originalEvent.movementX;
+                hkLightDetailsCtrl.colorPickerOffsetY += event.originalEvent.movementY;
+                // define the circle circumference where the knob can slide
+                //******* force a radius of 92.5px and find all the possible values for x and y
+                // r = (x0-x)² + (y0-y)² // demerden Sie sich
+                // 92,5 = (1440-x)² + (161-y)²
+                //******* diameter is 185px, 0° is (1440,322), center is (x0,y0) with x0=1440, y0=161
+                //******* update mouse position using a super complicated math formula
+                // x = x0 + r*cos(angle)
+                // y = y0 + r*sin(angle)
+
+
+                // get the associated color (use hue?) using a degree value
+                // hue goes from 0 (red-orange) to 360 (violet-red), it will be easier to use with a circle
+            }
         }
 
         // ---- HELPER(s) ----

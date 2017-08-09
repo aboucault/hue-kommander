@@ -20,11 +20,20 @@
     transition-delay: $transition-delay;
 }
 
+// Cursors
+//-------------------------
+@mixin cursor-grab() {
+    cursor: move; /* fallback if grab cursor is unsupported */
+    cursor: grab;
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
+}
+
 // Sizing shortcuts
 //-------------------------
 @mixin  size($height, $width) {
     width: $width;
-    height: $heigth;
+    height: $height;
 }
 @mixin square($size) {
     @include size($size, $size);

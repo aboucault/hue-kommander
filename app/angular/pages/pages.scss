@@ -2,24 +2,24 @@
 @import "scenes/scenes";
 @import "settings/settings";
 
-.button-container{
+.add-light-button-container{
     border-radius: 6px;
     overflow: hidden;
-    margin-bottom: 70px;
-}
+    margin-bottom: 80px;
 
-.button-container .md-button{
-    -webkit-border-image: -webkit-linear-gradient(#ff8769, #ff689e);
-    padding: 6px 25px;
-    margin: 0;
+    .md-button{
+        -webkit-border-image: -webkit-linear-gradient(#ff8769, #ff689e);
+        padding: 6px 25px;
+        margin: 0;
 
-    border: 3px solid transparent;
+        border: 3px solid transparent;
 
-    -moz-border-image: -moz-linear-gradient(top, #ff8769 0%, #ff689e 100%);
-    -webkit-border-image: -webkit-linear-gradient(top, #ff8769 0%, #ff689e 100%);
-    border-image: linear-gradient(to bottom, #ff8769 0%, #ff689e 100%);
+        -moz-border-image: -moz-linear-gradient(top, #ff8769 0%, #ff689e 100%);
+        -webkit-border-image: -webkit-linear-gradient(top, #ff8769 0%, #ff689e 100%);
+        border-image: linear-gradient(to bottom, #ff8769 0%, #ff689e 100%);
 
-    border-image-slice: 1;
+        border-image-slice: 1;
+    }
 }
 
 .lights-list {
@@ -80,9 +80,9 @@
     }
 }
 
-.md-sidenav-right {
-    min-width: 1300px;
-    width: 100%;
-    top: 64px !important;
+.sidenav-light {
     background-color: #2F2E4B;
+    z-index: 10;
+    overflow: hidden;
+    box-shadow: -15px 0 50px -5px rgba(0, 0, 0, 0.25);;
 }

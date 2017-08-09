@@ -23,20 +23,33 @@
                     <div layout="row" class="header">
                         Color
                     </div>
-                    <div class="content">
-                        Color picker
+                    <div class="content" layout="row" layout-align="center center">
+                        <div class="color-picker-container" layout="row" layout-align="center center">
+                            <div class="color-picker" layout="row" layout-align="center center">
+                                <div class="color-display" ng-style="{'background-color': hkLightDetailsCtrl.light.state.rgb}"></div>
+                            </div>
+                        </div>
+                        <div class="color-knob"
+                             ng-mousedown="hkLightDetailsCtrl.activateColorPicker = true"
+                             ng-mousemove="hkLightDetailsCtrl.moveColorPicker($event)"
+                             ng-mouseup="hkLightDetailsCtrl.activateColorPicker = false"
+                             ng-style="{'background-color': hkLightDetailsCtrl.light.state.rgb, 'top': hkLightDetailsCtrl.colorPickerOffsetY, 'left': hkLightDetailsCtrl.colorPickerOffsetX}">
+                        </div>
                     </div>
                 </div>
             </div>
 
+            {{hkLightDetailsCtrl.colorPickerOffsetX}}, {{hkLightDetailsCtrl.colorPickerOffsetY}}
+
 
             <span class="item-attribute">Color</span>
-            <span class="item-attribute">Intensity</span>
             <md-color-picker ng-model="hkLightDetailsCtrl.light.state.rgb"
                              ng-change="hkLightDetailsCtrl.setHueColor()"
                              type="1"
                              hex="false"
                              hsl="false"></md-color-picker>
+
+            <span class="item-attribute">Intensity</span>
             <md-slider flex class="md-primary"
                        md-discrete
                        ng-click="hkLightDetailsCtrl.setBrightness()"
