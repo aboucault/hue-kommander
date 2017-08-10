@@ -9,7 +9,7 @@ ALL RIGHTS RESERVED.*/
         .controller('LightsController', LightsController);
 
     /* @ngInject */
-    function LightsController($timeout, lightsService) {
+    function LightsController($timeout, lightsService, util) {
         var lightsCtrl = this;
 
         // ---- HANDLER(s) ----
@@ -32,6 +32,7 @@ ALL RIGHTS RESERVED.*/
 
         function init() {
             lightsCtrl.toggleDetails = toggleDetails;
+            lightsCtrl.getDeviceSize = util.getDeviceSize();
             lightsCtrl.refreshItems();
         }
         init();

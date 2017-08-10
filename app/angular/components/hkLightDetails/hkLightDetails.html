@@ -1,24 +1,25 @@
 <div class="hk-light-details" layout="row" layout-fill>
-    <div flex="50" layout="row" layout-align="center center">
+    <div flex="{{hkLightDetailsCtrl.getDeviceSize === 'large' ? 50 : 40}}" layout="row" layout-align="center center">
         <img ng-if="hkLightDetailsCtrl.light.modelname === 'Hue colors'" class="hue" src="./images/extendedColors.png" />
         <img ng-if="hkLightDetailsCtrl.light.modelname === 'Hue lightstrip'" class="hue" src="./images/lightstrip.png" />
     </div>
-    <div flex="50" layout="column">
+    <div flex="{{hkLightDetailsCtrl.getDeviceSize === 'large' ? 50 : 60}}" layout="column">
         <div class="sidenav-title" layout="column">
             <div layout="row">
-                <md-switch class="md-primary light-switch"
+                <md-switch class="light-switch"
                            aria-label="Switch light"
                            ng-model="hkLightDetailsCtrl.light.state.on"
-                           ng-change="hkLightDetailsCtrl.toggleLight()"></md-switch>
+                           ng-change="hkLightDetailsCtrl.toggleLight()"
+                           ng-disabled="hkLightDetailsCtrl.light.state.reachable === false"></md-switch>
                 <h1>{{ hkLightDetailsCtrl.light.name }}</h1>
             </div>
             <span class="item-modelid">{{ hkLightDetailsCtrl.light.modelname }}</span>
             <span class="item-attribute">
-                <i class="material-icons" ng-class="{'powered-light': (hkLightDetailsCtrl.light.state.on === true)}">power_settings_new</i><i class="material-icons" ng-class="{'reachable-light': (hkLightDetailsCtrl.light.state.reachable === true)}">wifi</i></span>
+                <i class="material-icons" ng-class="{'reachable-light': (hkLightDetailsCtrl.light.state.reachable === true)}">wifi</i><i class="material-icons" ng-if="hkLightDetailsCtrl.light.state.reachable === true" ng-class="{'powered-light': (hkLightDetailsCtrl.light.state.on === true)}">power_settings_new</i></span>
         </div>
 
         <div class="sidenav-content" layout="column" flex="100">
-            <div layout="row">
+            <div layout="row" class="first-row">
                 <div layout="column" class="light-card color-card" flex="50">
                     <div layout="row" class="header">
                         Color
@@ -37,10 +38,69 @@
                         </div>
                     </div>
                 </div>
+
+                <div layout="column" class="light-card intensity-card" flex="50">
+                    <div layout="row" class="header">
+                        Intensity
+                    </div>
+                    <div class="content" layout="row" layout-align="center center">
+                        <md-slider flex class="md-primary"
+                                   md-discrete
+                                   ng-click="hkLightDetailsCtrl.setBrightness()"
+                                   ng-model="hkLightDetailsCtrl.light.state.bri" step="1" min="0" max="254" aria-label="brightness"
+                                   ng-disabled="hkLightDetailsCtrl.light.state.on === false || hkLightDetailsCtrl.light.state.reachable === false"></md-slider>
+                    </div>
+                </div>
             </div>
 
             {{hkLightDetailsCtrl.colorPickerOffsetX}}, {{hkLightDetailsCtrl.colorPickerOffsetY}}
 
+            <div layout="row">
+                <div layout="column" class="light-card random-card" flex="50">
+                    <div layout="row" class="header">
+                        Random
+                    </div>
+                    <div class="content" layout="column">
+                        <div layout="row" layout-align="start center" class="first-row">
+                            <md-switch class="md-primary random-switch"
+                                       aria-label="Switch random mode"
+                                       ng-model="hkLightDetailsCtrl.randomMode"
+                                       ng-change="hkLightDetailsCtrl.activateRandomMode()"
+                                       ng-disabled="hkLightDetailsCtrl.light.state.on === false || hkLightDetailsCtrl.light.state.reachable === false"></md-switch>
+                            <span>Random mode</span>
+                        </div>
+                        <form name="transition">
+                            <md-input-container class="md-block" flex-gt-sm>
+                                <label>Transition time (in seconds)</label>
+                                <input name="transitionTime" ng-model="hkLightDetailsCtrl.transitionTime" placeholder="Enter a transition time"
+                                       ng-pattern="/^[0-9]$/" md-maxlength="4"
+                                       ng-disabled="hkLightDetailsCtrl.light.state.on === false || hkLightDetailsCtrl.light.state.reachable === false">
+
+                                <div ng-messages="transition.transitionTime.$error" role="alert" multiple>
+                                    <div ng-message="pattern" class="my-message">That doesn't look like a number...</div>
+                                    <div ng-message="md-maxlength" class="my-message">
+                                       Don't use such a long transition time! Be precise!
+                                    </div>
+                                </div>
+                            </md-input-container>
+                        </form>
+                    </div>
+                </div>
+
+                <div layout="column" class="light-card infos-card" flex="50">
+                    <div layout="row" class="header">
+                        Infos
+                    </div>
+                    <div class="content" layout="column">
+                        <span class="infos-label">Serial</span>
+                        <span class="infos-value">{{hkLightDetailsCtrl.light.swversion}}</span>
+                        <span class="infos-label">Fabricant</span>
+                        <span class="infos-value">{{hkLightDetailsCtrl.light.manufacturername}}</span>
+                        <span class="infos-label">Color gamut</span>
+                        <span class="infos-value">{{hkLightDetailsCtrl.light.state.colormode | uppercase}}</span>
+                    </div>
+                </div>
+            </div>
 
             <span class="item-attribute">Color</span>
             <md-color-picker ng-model="hkLightDetailsCtrl.light.state.rgb"
@@ -49,12 +109,6 @@
                              hex="false"
                              hsl="false"></md-color-picker>
 
-            <span class="item-attribute">Intensity</span>
-            <md-slider flex class="md-primary"
-                       md-discrete
-                       ng-click="hkLightDetailsCtrl.setBrightness()"
-                       ng-model="hkLightDetailsCtrl.light.state.bri" step="1" min="0" max="254" aria-label="brightness"></md-slider>
-            <span class="item-attribute" style="color:{{hkLightDetailsCtrl.rgbHueCoordinates}};">Serial</span>
         </div>
     </div>
 </div>

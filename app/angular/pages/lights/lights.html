@@ -1,5 +1,5 @@
 <div class="lights" layout="row" layout-fill>
-    <div layout="column" flex="20">
+    <div layout="column" flex="{{lightsCtrl.getDeviceSize === 'large' ? 20 : 25}}">
         <div layout="row"
              class="lights-list"
              ng-repeat="light in lightsCtrl.lights"
@@ -10,7 +10,7 @@
             <div class="light-icon"><i class="material-icons">{{ light.iconname }}</i></div>
             <div flex>
                 <h4 class="item-label">{{ light.name }}</h4>
-                <span class="item-state"><i class="material-icons power">power_settings_new</i> <i class="material-icons reachable">wifi</i></span>
+                <span class="item-state"><i class="material-icons reachable">wifi</i><i class="material-icons power" ng-if="light.state.reachable === true">power_settings_new</i></span>
             </div>
         </div>
         <div layout="row" layout-align="center end" flex="100">
@@ -19,7 +19,7 @@
             </div>
         </div>
     </div>
-    <div layout="row" flex="80" class="sidenav-light">
+    <div layout="row" flex="{{lightsCtrl.getDeviceSize === 'large' ? 80 : 75}}" class="sidenav-light">
         <hk-light-details light="lightsCtrl.selectedLight" flex></hk-light-details>
     </div>
 </div>
