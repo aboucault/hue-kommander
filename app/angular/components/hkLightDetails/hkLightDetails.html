@@ -71,9 +71,9 @@
                         </div>
                         <form name="transition">
                             <md-input-container class="md-block" flex-gt-sm>
-                                <label>Transition time (in seconds)</label>
-                                <input name="transitionTime" ng-model="hkLightDetailsCtrl.transitionTime" placeholder="Enter a transition time"
-                                       ng-pattern="/^[0-9]$/" md-maxlength="4"
+                                <label>Transition time (x 100ms) {{hkLightDetailsCtrl.light.state.transitiontime}}</label>
+                                <input name="transitionTime" ng-model="hkLightDetailsCtrl.light.state.transitiontime" placeholder="Enter a transition time"
+                                       ng-pattern="/^[0-9]{1,10}$/" md-maxlength="4"
                                        ng-disabled="hkLightDetailsCtrl.light.state.on === false || hkLightDetailsCtrl.light.state.reachable === false">
 
                                 <div ng-messages="transition.transitionTime.$error" role="alert" multiple>

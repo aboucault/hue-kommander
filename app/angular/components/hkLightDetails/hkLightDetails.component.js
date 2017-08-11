@@ -99,16 +99,13 @@ ALL RIGHTS RESERVED.*/
         }
 
         function activateRandomMode() {
-            if(hkLightDetailsCtrl.randomMode === true && hkLightDetailsCtrl.light.state.on === true && hkLightDetailsCtrl.light.state.reachable === true) {
-                let transition = (hkLightDetailsCtrl.transitionTime) ? hkLightDetailsCtrl.transitionTime*1000 : 2000;
-                $timeout(function () {
-                    let r = Math.floor((Math.random() * 255) + 0);
-                    let g = Math.floor((Math.random() * 255) + 0);
-                    let b = Math.floor((Math.random() * 255) + 0);
-                    hkLightDetailsCtrl.light.state.rgb = 'rgb('+ r +','+ g +','+ b +')';
-                    activateRandomMode();
-                }, transition);
+            if(hkLightDetailsCtrl.randomMode === true) {
+                hkLightDetailsCtrl.light.state.event = 'colorloop';
+                hkLightDetailsCtrl.light.state.transitiontime = hkLightDetailsCtrl.light.state.transitiontime ? hkLightDetailsCtrl.light.state.transitiontime : 4;
+            } else {
+                hkLightDetailsCtrl.light.state.event = 'none';
             }
+            lightsService.colorloop(hkLightDetailsCtrl.light.id, hkLightDetailsCtrl.light.state.event, hkLightDetailsCtrl.light.state.transitiontime);
         }
 
         // ---- HELPER(s) ----

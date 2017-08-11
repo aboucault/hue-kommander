@@ -4,21 +4,36 @@
     img.hue {
         max-width: 450px;
     }
+
+    md-switch .md-thumb, md-switch .md-ink-ripple {
+        background-color: #946dff;
+    }
+    md-switch .md-bar {
+        background-color: #4D4C73;
+    }
+    md-switch.md-checked .md-thumb, md-switch.md-checked .md-ink-ripple {
+        background-color: $green;
+    }
+    md-switch.md-checked .md-bar {
+        background-color: #4D4C73;
+    }
+    md-switch[disabled] .md-thumb {
+        background-color: #6967A0;
+    }
+    md-switch[disabled] .md-bar {
+        background-color: #4D4C73;
+    }
+    md-switch[disabled].md-checked .md-thumb {
+        background-color: #4288a0;
+    }
+    md-switch[disabled].md-checked .md-bar {
+        background-color: #403e60;
+    }
+
     .sidenav-title {
         margin-top: 24px;
 
-        md-switch.md-checked .md-thumb, md-switch.md-checked .md-ink-ripple {
-            background-color: $green;
-        }
-        md-switch.md-checked .md-bar {
-            background-color: rgba($green,.5);
-        }
-        md-switch[disabled] .md-thumb {
-            background-color: #35768a;
-        }
-        md-switch[disabled] .md-bar {
-            background-color: #335f76;
-        }
+
 
         .light-switch {
             margin-top: 18px;
@@ -133,11 +148,11 @@
                     background: linear-gradient(to top right, $blue-sky 0%, $blue 50%, $blue-light 100%);
                 }
                 .infos-label {
-                    font-size: 14px;
+                    font-size: 13px;
                     color: rgba(#fff,.54);
                 }
                 .infos-value {
-                    font-size: 16px;
+                    font-size: 14px;
                     margin-bottom: 16px;
                 }
             }
