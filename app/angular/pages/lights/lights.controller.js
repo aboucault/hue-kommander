@@ -24,9 +24,14 @@ ALL RIGHTS RESERVED.*/
             lightsCtrl.queryPromise = lightsService.list();
             return lightsCtrl.queryPromise.then(results => {
                 lightsCtrl.lights = results;
-                lightsCtrl.selectedLight = results[0];
+                if(!lightsCtrl.selectedLight) {
+                    lightsCtrl.selectedLight = results[0];
+                }
             });
         };
+
+        setInterval(lightsCtrl.refreshItems, 3000);
+
 
         // ---- INITIALIZE ----
 
