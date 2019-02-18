@@ -1,29 +1,7 @@
-# README #
+# Hue KOMMANDER #
 
-This README would normally document whatever steps are necessary to get your application up and running.
+Hue KOMMANDER is an AngularJS application that can control Philips Hue lights.
 
-### What is this repository for? ###
-
-* Quick summary
-* Version
-* [Learn Markdown](https://bitbucket.org/tutorials/markdowndemo)
-
-### How do I get set up? ###
-
-* Summary of set up
-* Configuration
-* Dependencies
-* Database configuration
-* How to run tests
-* Deployment instructions
-
-### Contribution guidelines ###
-
-* Writing tests
-* Code review
-* Other guidelines
-
-### Who do I talk to? ###
-
-* Repo owner or admin
-* Other community or team contact
+<img src="https://github.com/aboucault/hue-kommander/blob/master/images/2019-02-18%2011_20_02-Window.png"
+     alt="Hue Kommander Philips Hue UI"
+     style="float: left; margin-right: 10px;" />
