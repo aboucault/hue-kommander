@@ -30,7 +30,8 @@ ALL RIGHTS RESERVED.*/
                     reachable: undefined,
                     sat: undefined,
                     xy: [undefined],
-                    on: undefined
+                    on: undefined,
+                    transitiontime: undefined
                 }
             };
             angular.extend(this, defaults, data);

@@ -11,7 +11,8 @@ ALL RIGHTS RESERVED.*/
                 sanitize,
                 copyToClipBoard,
                 getLanguages: () => angular.copy(window.navigator.languages),
-                getLanguage: () => angular.copy(window.navigator.language)
+                getLanguage: () => angular.copy(window.navigator.language),
+                getDeviceSize
             };
 
             return util;
@@ -65,6 +66,15 @@ ALL RIGHTS RESERVED.*/
                 }
 
                 document.body.removeChild(textArea);
+            }
+
+            function getDeviceSize() {
+                if($(window).width() > 1600) {
+                    return 'large';
+                } else if($(window).width() > 800 && $(window).width() < 1600) {
+                    return 'medium';
+                }
+                return 'small';
             }
         });
 })();

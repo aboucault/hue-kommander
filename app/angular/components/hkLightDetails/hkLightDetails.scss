@@ -1,17 +1,39 @@
 .hk-light-details {
+    padding: 20px;
 
     img.hue {
         max-width: 450px;
     }
+
+    md-switch .md-thumb, md-switch .md-ink-ripple {
+        background-color: #946dff;
+    }
+    md-switch .md-bar {
+        background-color: #4D4C73;
+    }
+    md-switch.md-checked .md-thumb, md-switch.md-checked .md-ink-ripple {
+        background-color: $green;
+    }
+    md-switch.md-checked .md-bar {
+        background-color: #4D4C73;
+    }
+    md-switch[disabled] .md-thumb {
+        background-color: #6967A0;
+    }
+    md-switch[disabled] .md-bar {
+        background-color: #4D4C73;
+    }
+    md-switch[disabled].md-checked .md-thumb {
+        background-color: #4288a0;
+    }
+    md-switch[disabled].md-checked .md-bar {
+        background-color: #403e60;
+    }
+
     .sidenav-title {
         margin-top: 24px;
 
-        md-switch.md-checked.md-primary .md-thumb, md-switch.md-checked.md-primary .md-ink-ripple {
-            background-color: $green-500;
-        }
-        md-switch.md-checked.md-primary .md-bar {
-            background-color: rgba($green-500,.5);
-        }
+
 
         .light-switch {
             margin-top: 18px;
@@ -39,35 +61,99 @@
                 margin-right: 3px;
                 color: rgba(#fff,.54);
                 &.powered-light {
-                    color: $green-500;
+                    color: $green;
                 }
                 &.reachable-light {
-                    color: $coral-500;
+                    color: $coral;
                 }
             }
         }
     }
     .sidenav-content {
-        margin-left: 54px;
+        margin-left: 38px;
+
+        .first-row {
+            margin-bottom: 30px;
+        }
 
         .light-card {
             padding: 16px;
-
             .header {
+                z-index: 10;
                 height: 48px;
                 font-size: 40px;
                 font-weight: bolder;
                 color: rgba(#fff,.22);
             }
-
             .content {
                 height: 217px;
+                padding: 20px 30px;
                 box-shadow: 0px -50px 60px -5px rgba(0, 0, 0, 0.25);
             }
 
             &.color-card {
                 .header {
-                    background: linear-gradient(to top right, #30BDE0 0%, $green-500 50%, #26DDD9 100%);
+                    background: linear-gradient(to top right, $blue-green 0%, $green 50%, $cyan 100%);
+                }
+                .content {
+                    padding: 0;
+                }
+
+                .color-picker-container {
+                    border-radius: 50%;
+                    @include square(190px);
+                    background-image: url('./images/rainbow.png');
+
+                    .color-picker {
+                        @include square(180px);
+                        padding: 10px;
+                        border-radius: 50%;
+                        background: #2f2e4b;
+                    }
+                    .color-display {
+                        @include square(60px);
+                        border-radius: 50%;
+                        border: 6px solid rgba(#2f2e4b,.38);
+                    }
+                }
+                .color-knob {
+                    @include cursor-grab();
+                    position: fixed;
+                    border-radius: 50%;
+                    @include square(30px);
+                    border: 3px solid rgba(#fff,.87);
+                }
+            }
+
+            &.intensity-card {
+                .header {
+                    background: linear-gradient(to top right, $pink 0%, $coral 50%, $orange 100%);
+                }
+            }
+
+            &.random-card {
+                .header {
+                    background: linear-gradient(to top right, $purple 0%, $violet 50%, $indigo 100%);
+                }
+                .first-row {
+                    margin-bottom: 24px;
+                }
+                .random-switch {
+                    margin: 0;
+                }
+            }
+
+            &.infos-card {
+                .header {
+                    background: linear-gradient(to top right, $blue-sky 0%, $blue 50%, $blue-light 100%);
+                }
+                .infos-label {
+                    font-size: 13px;
+                    color: rgba(#fff,.54);
+                }
+                .infos-value {
+                    font-size: 14px;
+                    margin-bottom: 16px;
                 }
             }
         }
