@@ -6,7 +6,6 @@
 'use strict';
 
 var packageJson = require('./package.json');
-var bowerJson = require('./bower.json');
 
 module.exports = function (grunt) {
 
@@ -29,7 +28,7 @@ module.exports = function (grunt) {
         },
         version: packageJson.version,
         paths: {
-            app: bowerJson.appPath || 'app',
+            app: packageJson.appPath || 'app',
             dist: 'dist',
             tmp: '.tmp'
         },
@@ -47,7 +46,6 @@ module.exports = function (grunt) {
     var configs = require('load-grunt-configs')(grunt, options);
     grunt.initConfig(configs);
 
-
     grunt.registerTask('serve', 'Start a webserver with ./app', function (target) {
         if (target === 'dist') {
             return grunt.task.run(['build', 'configureProxies', 'connect:dist:keepalive']);
@@ -59,8 +57,6 @@ module.exports = function (grunt) {
             'ngtemplates:app',
             'babel:app',
             'injector:app',
-            'wiredep:app',
-            'wiredep:sass',
             'sass:app',
             'autoprefixer:app',
             'connect:livereload',
@@ -76,13 +72,10 @@ module.exports = function (grunt) {
             'clean:tmp',
             'ngtemplates:app',
             'injector:appES6',
-            'wiredep:app',
-            'wiredep:sass',
             'sass:app',
             'autoprefixer:app',
             'connect:livereload',
             'configureProxies',
-            // 'testRunner',
             'concurrent:watchES6'
         ]);
     });
@@ -90,7 +83,6 @@ module.exports = function (grunt) {
     grunt.registerTask('testRunner', [
         'injector:testRunner',
         'injector:testRunnerSpecs',
-        'wiredep:testRunner'
     ]);
 
     grunt.registerTask('test', [
@@ -98,7 +90,6 @@ module.exports = function (grunt) {
         'ngtemplates:app',
         'babel:test',
         'injector:test',
-        'wiredep:test',
         'testRunner',
         'karma'
     ]);
@@ -114,7 +105,6 @@ module.exports = function (grunt) {
                 'ngtemplates:app',
                 'babel:app',
                 'injector:app',
-                'wiredep:app',
                 'sass:dist',
                 'autoprefixer:dist',
                 'useminPrepare',
@@ -129,11 +119,11 @@ module.exports = function (grunt) {
 
         switch(target) {
             case 'app':
-                buildApp();
-                break;
+            buildApp();
+            break;
             default:
-                buildApp();
-                break;
+            buildApp();
+            break;
         }
     });
 };
